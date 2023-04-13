@@ -1,2 +1,5 @@
 res://main.tscn
 res://player.tscn
+res://player.gd
+res://main.gd
+res://PlayerCamera.gd
