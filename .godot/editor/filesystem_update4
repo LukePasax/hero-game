@@ -1,5 +1,3 @@
-res://main.tscn
-res://player.tscn
-res://player.gd
-res://main.gd
-res://PlayerCamera.gd
+res://logger.tscn
+res://web_socket_client.tscn
+res://web_socket_client.gd

@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://cfw8ov2cfsejt"]
+[gd_scene load_steps=110 format=3 uid="uid://cfw8ov2cfsejt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k6i68"]
 [ext_resource type="Texture2D" uid="uid://dfhf5ythbtgss" path="res://Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_0.png" id="1_mj75x"]
@@ -106,6 +106,7 @@
 [ext_resource type="Texture2D" uid="uid://druxkv3ifmkmk" path="res://Hero Knight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_2.png" id="103_a41xd"]
 [ext_resource type="Texture2D" uid="uid://cnshc2jn5q4gs" path="res://Hero Knight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_3.png" id="104_bntg7"]
 [ext_resource type="Texture2D" uid="uid://dmx265vt7i3q1" path="res://Hero Knight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_4.png" id="105_aij7w"]
+[ext_resource type="PackedScene" uid="uid://dsi7tkmhru1lt" path="res://combo_checker.tscn" id="107_st4fu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w18tu"]
 animations = [{
@@ -128,7 +129,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_l7qy2")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1",
 "speed": 10.0
 }, {
@@ -151,7 +152,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_kd4ap")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2",
 "speed": 10.0
 }, {
@@ -180,7 +181,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_qttlo")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3",
 "speed": 10.0
 }, {
@@ -200,7 +201,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("25_3fpcn")
 }],
-"loop": true,
+"loop": false,
 "name": &"block",
 "speed": 10.0
 }, {
@@ -249,7 +250,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("38_atuk5")
 }],
-"loop": true,
+"loop": false,
 "name": &"block_no_effect",
 "speed": 10.0
 }, {
@@ -284,7 +285,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("48_opfoh")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 10.0
 }, {
@@ -319,7 +320,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("58_w7d4t")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_no_blood",
 "speed": 10.0
 }, {
@@ -350,7 +351,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("65_niiwj")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 10.0
 }, {
@@ -413,7 +414,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("81_bh5lg")
 }],
-"loop": true,
+"loop": false,
 "name": &"ledge_grab",
 "speed": 10.0
 }, {
@@ -445,7 +446,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("90_3n3eg")
 }],
-"loop": true,
+"loop": false,
 "name": &"roll",
 "speed": 10.0
 }, {
@@ -510,12 +511,15 @@ size = Vector2(23, 41)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_k6i68")
+jump_impulse = 100
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w18tu")
-animation = &"death_no_blood"
+animation = &"block"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 5)
 shape = SubResource("RectangleShape2D_tmdu0")
+
+[node name="ComboChecker" parent="." instance=ExtResource("107_st4fu")]

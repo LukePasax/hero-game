@@ -1,56 +1,64 @@
 2a60927148abd1d33b818b535e306557
-::res://::1681393609
+::res://::1681994611
+combo_checker.gd::GDScript::-1::1681744697::0::1::::<>Node<>::
+combo_checker.tscn::PackedScene::8441153676561820801::1681994097::0::1::::<><>::res://combo_checker.gd
 icon.svg::CompressedTexture2D::8702579114602928157::1681380537::1681380545::1::::<><>::
-main.tscn::PackedScene::7588048145940987235::1681391873::0::1::::<><>::
-player.tscn::PackedScene::5171231702839978165::1681392516::0::1::::<><>::
+logger.gd::GDScript::-1::1681210121::0::1::::<>Node<>::
+logger.tscn::PackedScene::7717655872402100331::1681994386::0::1::::<><>::res://logger.gd
+main.gd::GDScript::-1::1681406407::0::1::::<>Node2D<>::
+main.tscn::PackedScene::7588048145940987235::1681994097::0::1::::<><>::uid://cfw8ov2cfsejt<>res://main.gd
+player.gd::GDScript::-1::1681744871::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::5171231702839978165::1681994185::0::1::::<><>::res://player.gd<>uid://dfhf5ythbtgss<>uid://fxbb8ovnwoim<>uid://cvjav81niqv7p<>uid://bqpbbpvv2cfyx<>uid://df17dakvt7jak<>uid://0ffk2w7togch<>uid://b40chfts2jir2<>uid://bx0ael542w7qr<>uid://bxxofuxe3kr8a<>uid://bwpaome5dl2i1<>uid://cdtoeabytihv1<>uid://b82s3fjxa353m<>uid://dxdg0s6ua05dn<>uid://lpdxaus0gxs6<>uid://dcn3ptd4jnbie<>uid://c0gucoxoe7ytn<>uid://85820w8y30o<>uid://cjxa5ntbawfaw<>uid://df8oabcsysu76<>uid://hp8vfsphy7kf<>uid://bgfimunsvdu1o<>uid://cqxa5tgroyvt6<>uid://bwra51of5uhwp<>uid://dl4ik0nclqeg4<>uid://bw7o4l3wadbf3<>uid://qj0plxqg2tt7<>uid://btb4ssowy02f3<>uid://u81prf7uho3e<>uid://dl78srt3rgk8o<>uid://fgt687l1gpgb<>uid://blwx6i21iideq<>uid://wcvpr6vyt508<>uid://gtfsr7dmimyb<>uid://0vk0lncqbsyq<>uid://deucsub43dlsh<>uid://cwki0lqxm5r3m<>uid://cymbmes03vvg0<>uid://b6gwiu3cxipir<>uid://ce03q0lm4kqf2<>uid://bh1le0lave6bc<>uid://dbmnqvxa45vmo<>uid://b2jminr3s60iy<>uid://d18spp03kd33q<>uid://cwoouyr3bxhjj<>uid://e2c7le6xd2ik<>uid://b72as6sqyy85u<>uid://c8beshvdgqwe3<>uid://ciqcojwidha6b<>uid://b52xj2dddvrpj<>uid://bb5xsms3fkowf<>uid://cdymgofjpc7h8<>uid://cueo3fno3x2vh<>uid://bjf8qbnp5qdx5<>uid://b815p3mtvxvmb<>uid://dfs4qy3xu67ud<>uid://cw8ml4wbfh2bi<>uid://db2xariio0o23<>uid://c6vchdtdgo3nr<>uid://bj47askj1swlw<>uid://dvoficgapc3l<>uid://c4d5jnxcu24us<>uid://coobrugdji3wb<>uid://b3kg75i3liph3<>uid://c8mo1bvbkablx<>uid://dbu3psem66dtc<>uid://bds5xmu52b2hv<>uid://mh4mn2homu0p<>uid://db0p2hutxa6dh<>uid://boqyuoyl4lpah<>uid://bnb4e6gx60k5n<>uid://cb75v8v4hdwtm<>uid://nq72jcp7rsn7<>uid://dcqsnjrlokvdx<>uid://c17ylawl2ryd3<>uid://bq4k113ii2dcf<>uid://d0rcvdnnqpx8e<>uid://uavjmk8ocx1m<>uid://dnk8woyaqmhap<>uid://ua2afrmnjqb5<>uid://6fh0kxx620ha<>uid://cv746vcncpbrj<>uid://cwf5f6kysrinm<>uid://4jlfc1exvk7p<>uid://byjad43nh844h<>uid://cldicwtmlu64o<>uid://b0koehlwkj5tu<>uid://eo6qt5kita4r<>uid://bsh6550ceieaa<>uid://cbag2meue0abt<>uid://d0p3yxfqk55yk<>uid://da0ljy6yilqjh<>uid://coxqk73r7aivj<>uid://diqkxtrcj7teu<>uid://qt1bi0o170h4<>uid://duc8bovv63ymj<>uid://c7n0tvgujkyij<>uid://c0c570s1djvv<>uid://dn6lhrnkpxe<>uid://bev1ismn18nl2<>uid://dngxh32le5f1y<>uid://cnrwcgt27kjg1<>uid://idubgvqar4hd<>uid://druxkv3ifmkmk<>uid://cnshc2jn5q4gs<>uid://dmx265vt7i3q1<>uid://dsi7tkmhru1lt
+web_socket_client.gd::GDScript::-1::1681210010::0::1::::<>Node<>::
+web_socket_client.tscn::PackedScene::2442728679824084854::1681994385::0::1::::<><>::res://web_socket_client.gd
 ::res://Hero Knight/::1681393609
 EULA.txt::TextFile::-1::1681393609::0::1::::<><>::
 Instructions.txt::TextFile::-1::1681393609::0::1::::<><>::
-::res://Hero Knight/Preview/::1681393609
+::res://Hero Knight/Preview/::1681393619
 BlockEffect_Preview.png::CompressedTexture2D::1451251811100763901::1681393609::1681393618::1::::<><>::
 HeroKnight_Preview.png::CompressedTexture2D::3892264793020481952::1681393609::1681393619::1::::<><>::
 SlideDust_Preview.png::CompressedTexture2D::3526526702826025762::1681393609::1681393618::1::::<><>::
 ::res://Hero Knight/Sprites/::1681393609
-::res://Hero Knight/Sprites/Effects/::1681393609
+::res://Hero Knight/Sprites/Effects/::1681393618
 BlockFlash.png::CompressedTexture2D::9212328169426563665::1681393609::1681393618::1::::<><>::
 SlideDust.png::CompressedTexture2D::126836600577608377::1681393609::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/Effects/BlockFlash/::1681393609
+::res://Hero Knight/Sprites/Effects/BlockFlash/::1681393618
 BlockFlash_0.png::CompressedTexture2D::5590366167196754288::1681393609::1681393618::1::::<><>::
 BlockFlash_1.png::CompressedTexture2D::978149096085363115::1681393609::1681393618::1::::<><>::
 BlockFlash_2.png::CompressedTexture2D::4666788197679283257::1681393609::1681393618::1::::<><>::
 BlockFlash_3.png::CompressedTexture2D::8541659068866963881::1681393609::1681393618::1::::<><>::
 BlockFlash_4.png::CompressedTexture2D::8472450829032487208::1681393609::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/Effects/SlideDust/::1681393609
+::res://Hero Knight/Sprites/Effects/SlideDust/::1681393618
 SlideDust_0.png::CompressedTexture2D::4762395936042249010::1681393609::1681393618::1::::<><>::
 SlideDust_1.png::CompressedTexture2D::483642020493134179::1681393609::1681393618::1::::<><>::
 SlideDust_2.png::CompressedTexture2D::3125059370562892316::1681393609::1681393618::1::::<><>::
 SlideDust_3.png::CompressedTexture2D::5444855041385449908::1681393609::1681393618::1::::<><>::
 SlideDust_4.png::CompressedTexture2D::1295135524623402221::1681393609::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/EnvironmentTiles/::1681393609
+::res://Hero Knight/Sprites/EnvironmentTiles/::1681393618
 EnvironmentTiles.png::CompressedTexture2D::9067747980710908717::1681393609::1681393618::1::::<><>::
 Tile_0.png::CompressedTexture2D::1484660507153237140::1681393609::1681393618::1::::<><>::
 Tile_1.png::CompressedTexture2D::3950435696436826353::1681393609::1681393618::1::::<><>::
 Tile_2.png::CompressedTexture2D::7593416710533486934::1681393609::1681393618::1::::<><>::
 Tile_3.png::CompressedTexture2D::5172807988843429203::1681393609::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/::1681393618
 HeroKnight.png::CompressedTexture2D::3432621194351455838::1681393609::1681393618::1::::<><>::
 HeroKnight_BlockNoEffect.png::CompressedTexture2D::3925175263810234335::1681393609::1681393618::1::::<><>::
 HeroKnight_DeathNoBlood.png::CompressedTexture2D::6703430508930320688::1681393609::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/Attack1/::1681393609
+::res://Hero Knight/Sprites/HeroKnight/Attack1/::1681393618
 HeroKnight_Attack1_0.png::CompressedTexture2D::7525015362560688726::1681393609::1681393618::1::::<><>::
 HeroKnight_Attack1_1.png::CompressedTexture2D::398489165190422132::1681393609::1681393618::1::::<><>::
 HeroKnight_Attack1_2.png::CompressedTexture2D::6265425759280897987::1681393609::1681393618::1::::<><>::
 HeroKnight_Attack1_3.png::CompressedTexture2D::3540471172280642299::1681393609::1681393618::1::::<><>::
 HeroKnight_Attack1_4.png::CompressedTexture2D::7565828408454107390::1681393609::1681393618::1::::<><>::
 HeroKnight_Attack1_5.png::CompressedTexture2D::1765365876220022019::1681393609::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/Attack2/::1681393609
+::res://Hero Knight/Sprites/HeroKnight/Attack2/::1681393618
 HeroKnight_Attack2_0.png::CompressedTexture2D::4473640820412718709::1681393609::1681393618::1::::<><>::
 HeroKnight_Attack2_1.png::CompressedTexture2D::4052381299850554545::1681393609::1681393618::1::::<><>::
 HeroKnight_Attack2_2.png::CompressedTexture2D::4049104828796553078::1681393609::1681393618::1::::<><>::
 HeroKnight_Attack2_3.png::CompressedTexture2D::3961566548982333662::1681393609::1681393618::1::::<><>::
 HeroKnight_Attack2_4.png::CompressedTexture2D::5023488259362753328::1681393609::1681393618::1::::<><>::
 HeroKnight_Attack2_5.png::CompressedTexture2D::4759533908773058492::1681393609::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/Attack3/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/Attack3/::1681393619
 HeroKnight_Attack3_0.png::CompressedTexture2D::8780208529039413875::1681393610::1681393619::1::::<><>::
 HeroKnight_Attack3_1.png::CompressedTexture2D::803266202314962271::1681393610::1681393619::1::::<><>::
 HeroKnight_Attack3_2.png::CompressedTexture2D::7328204515772412144::1681393610::1681393619::1::::<><>::
@@ -59,13 +67,13 @@ HeroKnight_Attack3_4.png::CompressedTexture2D::70006364661047328::1681393610::16
 HeroKnight_Attack3_5.png::CompressedTexture2D::5452075934490156986::1681393610::1681393619::1::::<><>::
 HeroKnight_Attack3_6.png::CompressedTexture2D::7579180829515768575::1681393610::1681393619::1::::<><>::
 HeroKnight_Attack3_7.png::CompressedTexture2D::524329025325516009::1681393610::1681393619::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/Block/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/Block/::1681393619
 HeroKnight_Block_0.png::CompressedTexture2D::2818383871156087610::1681393610::1681393619::1::::<><>::
 HeroKnight_Block_1.png::CompressedTexture2D::5943398135759800377::1681393610::1681393619::1::::<><>::
 HeroKnight_Block_2.png::CompressedTexture2D::3965724626868404279::1681393610::1681393619::1::::<><>::
 HeroKnight_Block_3.png::CompressedTexture2D::7991711213118988841::1681393610::1681393619::1::::<><>::
 HeroKnight_Block_4.png::CompressedTexture2D::3997537779792772642::1681393610::1681393619::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/BlockIdle/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/BlockIdle/::1681393619
 HeroKnight_Block Idle_0.png::CompressedTexture2D::1143146223746212970::1681393610::1681393619::1::::<><>::
 HeroKnight_Block Idle_1.png::CompressedTexture2D::3723866995730521530::1681393610::1681393619::1::::<><>::
 HeroKnight_Block Idle_2.png::CompressedTexture2D::1473507669467048876::1681393610::1681393619::1::::<><>::
@@ -74,13 +82,13 @@ HeroKnight_Block Idle_4.png::CompressedTexture2D::364541250427219001::1681393610
 HeroKnight_Block Idle_5.png::CompressedTexture2D::3205366587834302948::1681393610::1681393619::1::::<><>::
 HeroKnight_Block Idle_6.png::CompressedTexture2D::1549586101074388835::1681393610::1681393619::1::::<><>::
 HeroKnight_Block Idle_7.png::CompressedTexture2D::460692910892815681::1681393610::1681393619::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/BlockNoEffect/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/BlockNoEffect/::1681393619
 HeroKnight_BlockNoEffect_0.png::CompressedTexture2D::1798725436512974096::1681393610::1681393619::1::::<><>::
 HeroKnight_BlockNoEffect_1.png::CompressedTexture2D::7481459612355432527::1681393610::1681393619::1::::<><>::
 HeroKnight_BlockNoEffect_2.png::CompressedTexture2D::6338170689289239192::1681393610::1681393619::1::::<><>::
 HeroKnight_BlockNoEffect_3.png::CompressedTexture2D::6482228533341354817::1681393610::1681393619::1::::<><>::
 HeroKnight_BlockNoEffect_4.png::CompressedTexture2D::4576012257032030157::1681393610::1681393619::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/Death/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/Death/::1681393619
 HeroKnight_Death_0.png::CompressedTexture2D::5106936164950758117::1681393610::1681393619::1::::<><>::
 HeroKnight_Death_1.png::CompressedTexture2D::2932092770965790928::1681393610::1681393618::1::::<><>::
 HeroKnight_Death_2.png::CompressedTexture2D::7255042459935307386::1681393610::1681393618::1::::<><>::
@@ -91,7 +99,7 @@ HeroKnight_Death_6.png::CompressedTexture2D::336672738677685614::1681393610::168
 HeroKnight_Death_7.png::CompressedTexture2D::4688235680550394708::1681393610::1681393618::1::::<><>::
 HeroKnight_Death_8.png::CompressedTexture2D::7091412997706007036::1681393610::1681393618::1::::<><>::
 HeroKnight_Death_9.png::CompressedTexture2D::5367529102719236103::1681393610::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/::1681393618
 HeroKnight_DeathNoBlood_0.png::CompressedTexture2D::4549238178078487235::1681393610::1681393618::1::::<><>::
 HeroKnight_DeathNoBlood_1.png::CompressedTexture2D::2519970154442808265::1681393610::1681393618::1::::<><>::
 HeroKnight_DeathNoBlood_2.png::CompressedTexture2D::5033693026554364655::1681393610::1681393618::1::::<><>::
@@ -102,16 +110,16 @@ HeroKnight_DeathNoBlood_6.png::CompressedTexture2D::7549155739223171523::1681393
 HeroKnight_DeathNoBlood_7.png::CompressedTexture2D::6385870198168313406::1681393610::1681393618::1::::<><>::
 HeroKnight_DeathNoBlood_8.png::CompressedTexture2D::7286586490549157778::1681393610::1681393618::1::::<><>::
 HeroKnight_DeathNoBlood_9.png::CompressedTexture2D::6992181574609570219::1681393610::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/Fall/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/Fall/::1681393618
 HeroKnight_Fall_0.png::CompressedTexture2D::3079931136384396468::1681393610::1681393618::1::::<><>::
 HeroKnight_Fall_1.png::CompressedTexture2D::254777854167222787::1681393610::1681393618::1::::<><>::
 HeroKnight_Fall_2.png::CompressedTexture2D::6816349266532204998::1681393610::1681393618::1::::<><>::
 HeroKnight_Fall_3.png::CompressedTexture2D::5784478602249152269::1681393610::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/Hurt/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/Hurt/::1681393618
 HeroKnight_Hurt_0.png::CompressedTexture2D::4372775119806324278::1681393610::1681393618::1::::<><>::
 HeroKnight_Hurt_1.png::CompressedTexture2D::7114742294053289105::1681393610::1681393618::1::::<><>::
 HeroKnight_Hurt_2.png::CompressedTexture2D::7272466264691959804::1681393610::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/Idle/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/Idle/::1681393618
 HeroKnight_Idle_0.png::CompressedTexture2D::2636009259798585319::1681393610::1681393618::1::::<><>::
 HeroKnight_Idle_1.png::CompressedTexture2D::858499715102416657::1681393610::1681393618::1::::<><>::
 HeroKnight_Idle_2.png::CompressedTexture2D::7282019709349343161::1681393610::1681393618::1::::<><>::
@@ -120,17 +128,17 @@ HeroKnight_Idle_4.png::CompressedTexture2D::3302709603287546185::1681393610::168
 HeroKnight_Idle_5.png::CompressedTexture2D::4910951077647717202::1681393610::1681393618::1::::<><>::
 HeroKnight_Idle_6.png::CompressedTexture2D::947476648088080138::1681393610::1681393618::1::::<><>::
 HeroKnight_Idle_7.png::CompressedTexture2D::7333786403101626529::1681393610::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/Jump/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/Jump/::1681393618
 HeroKnight_Jump_0.png::CompressedTexture2D::6665288276186569850::1681393610::1681393618::1::::<><>::
 HeroKnight_Jump_1.png::CompressedTexture2D::3569964146575410861::1681393610::1681393618::1::::<><>::
 HeroKnight_Jump_2.png::CompressedTexture2D::8949236677771831706::1681393610::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/LedgeGrab/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/LedgeGrab/::1681393618
 HeroKnight_Grab Ledge_0.png::CompressedTexture2D::1405068649000317164::1681393610::1681393618::1::::<><>::
 HeroKnight_Grab Ledge_1.png::CompressedTexture2D::8094404516565592075::1681393610::1681393618::1::::<><>::
 HeroKnight_Grab Ledge_2.png::CompressedTexture2D::1405416521006737752::1681393610::1681393618::1::::<><>::
 HeroKnight_Grab Ledge_3.png::CompressedTexture2D::2186646267197824954::1681393610::1681393618::1::::<><>::
 HeroKnight_Grab Ledge_4.png::CompressedTexture2D::6314684430989960583::1681393610::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/Roll/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/Roll/::1681393618
 HeroKnight_Roll_0.png::CompressedTexture2D::6329149899732812558::1681393610::1681393618::1::::<><>::
 HeroKnight_Roll_1.png::CompressedTexture2D::2054732826604363279::1681393610::1681393618::1::::<><>::
 HeroKnight_Roll_2.png::CompressedTexture2D::4089539255207155181::1681393610::1681393618::1::::<><>::
@@ -140,7 +148,7 @@ HeroKnight_Roll_5.png::CompressedTexture2D::311568507340783043::1681393610::1681
 HeroKnight_Roll_6.png::CompressedTexture2D::3666207928466159632::1681393610::1681393618::1::::<><>::
 HeroKnight_Roll_7.png::CompressedTexture2D::4843443366790721341::1681393610::1681393618::1::::<><>::
 HeroKnight_Roll_8.png::CompressedTexture2D::8946692959694808066::1681393610::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/Run/::1681393610
+::res://Hero Knight/Sprites/HeroKnight/Run/::1681393618
 HeroKnight_Run_0.png::CompressedTexture2D::7211556763547305105::1681393610::1681393618::1::::<><>::
 HeroKnight_Run_1.png::CompressedTexture2D::5803956921302245907::1681393610::1681393618::1::::<><>::
 HeroKnight_Run_2.png::CompressedTexture2D::7754452111745501432::1681393610::1681393618::1::::<><>::
@@ -151,7 +159,7 @@ HeroKnight_Run_6.png::CompressedTexture2D::192163859150265403::1681393610::16813
 HeroKnight_Run_7.png::CompressedTexture2D::7038403139863374::1681393610::1681393618::1::::<><>::
 HeroKnight_Run_8.png::CompressedTexture2D::2712121883828326413::1681393610::1681393618::1::::<><>::
 HeroKnight_Run_9.png::CompressedTexture2D::8085513789158889840::1681393610::1681393618::1::::<><>::
-::res://Hero Knight/Sprites/HeroKnight/WallSlide/::1681393611
+::res://Hero Knight/Sprites/HeroKnight/WallSlide/::1681393618
 HeroKnight_Slide_0.png::CompressedTexture2D::5721730447689618938::1681393610::1681393618::1::::<><>::
 HeroKnight_Slide_1.png::CompressedTexture2D::568920356324334893::1681393610::1681393618::1::::<><>::
 HeroKnight_Slide_2.png::CompressedTexture2D::8395175443395252218::1681393611::1681393618::1::::<><>::
