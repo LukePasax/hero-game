@@ -4,3 +4,7 @@
 
 [node name="ComboChecker" type="Node"]
 script = ExtResource("1_yivi5")
+
+[node name="ComboTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ComboTimer" to="." method="_on_combo_timer_timeout"]

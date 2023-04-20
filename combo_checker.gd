@@ -20,6 +20,7 @@ func press_key(key):
 	# If the number of keys is higher than the max, forget the oldes key pressed
 	if keysequence.size() > maxcombo:
 		keysequence.pop_front()
+	$ComboTimer.start()
 	return ""
 
 func check_combo(s, t):
@@ -41,6 +42,9 @@ func check_combo(s, t):
 	# All keys matches, execute combo
 	return true
 
+func _on_combo_timer_timeout():
+	keysequence.clear()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -49,3 +53,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+

@@ -5,6 +5,9 @@ var socket = WebSocketPeer.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pass
+
+func connect_to_obs():
 	# Connect the socket to the obs websocket url
 	socket.connect_to_url("ws://192.168.1.15:4454")
 	print("connecting")
