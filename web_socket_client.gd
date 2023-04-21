@@ -9,7 +9,7 @@ func _ready():
 
 func connect_to_obs():
 	# Connect the socket to the obs websocket url
-	socket.connect_to_url("ws://192.168.1.15:4454")
+	socket.connect_to_url("ws://10.201.102.212:4454")
 	print("connecting")
 	# Await for obs request for identification
 	while socket.get_available_packet_count() == 0:
@@ -32,7 +32,7 @@ func connect_to_obs():
 	message = socket.get_packet().get_string_from_ascii()
 	
 
-# A method that stops the recording on obs
+# A method that stops the recording on obs. Returns the name of the 
 func stop_recording():
 	print("stop recording")
 	# Send to obs the message to stop recording
@@ -47,7 +47,7 @@ func stop_recording():
 	while socket.get_available_packet_count() == 0 && socket.get_ready_state() != WebSocketPeer.STATE_CLOSED:
 		socket.poll()
 	message = socket.get_packet().get_string_from_ascii()
-	print(message)
+	return JSON.parse_string(message)["d"]["responseData"]["outputPath"]
 
 # A method that starts the recording on obs
 func start_recording():
@@ -63,7 +63,7 @@ func start_recording():
 	while socket.get_available_packet_count() == 0 && socket.get_ready_state() != WebSocketPeer.STATE_CLOSED:
 		socket.poll()
 	message = socket.get_packet().get_string_from_ascii()
-	print(message)
+	
 
 # A method to get the time of recording
 func get_recording_time():

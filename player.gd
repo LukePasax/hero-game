@@ -39,6 +39,7 @@ func _process(delta):
 	if is_on_floor() and !unblockable:
 		# If the player jumps, play the animation and change the y velocity
 		if Input.is_action_just_pressed("jump"):
+			get_parent().log("player_jump")
 			velocity.y -= jump_impulse
 			$AnimatedSprite2D.play("jump")
 		# If the player presses one of the combo buttons, calls ComboChecker and eventually play the animation

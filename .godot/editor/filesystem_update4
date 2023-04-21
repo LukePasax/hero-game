@@ -1,7 +1,9 @@
-res://logger.tscn
-res://web_socket_client.tscn
-res://web_socket_client.gd
-res://combo_checker.gd
-res://combo_checker.tscn
 res://main.tscn
 res://player.tscn
+res://combo_checker.tscn
+res://web_socket_client.tscn
+res://logger.tscn
+res://player.gd
+res://logger.gd
+res://main.gd
+res://web_socket_client.gd

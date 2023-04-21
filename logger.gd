@@ -1,21 +1,17 @@
 extends Node
 
-var file
+var logs = ""
+var file_name
 
-# The initial method to call. This opens the log file in write mode
-func start_logging():
-	file = FileAccess.open("user://log.txt", FileAccess.WRITE)
-	file.store_line("started logging")
-
-# The method to call when stopping to log. Otherwise the logged data will be lost
-func stop_logging():
-	file.store_line("stopped logging")
+# The method to call when stopping to log. It saves the logged data to a file with the given name
+func stop_logging(name):
+	var file = FileAccess.open("user://" + name + ".txt", FileAccess.WRITE)
+	file.store_string(logs)
 	file.close()
 
 # Logs the given time and action
 func log(time : String, action : String):
-	print(time + " " + action)
-	file.store_line(time + " " + action)
+	logs += time + " " + action + "\n"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
