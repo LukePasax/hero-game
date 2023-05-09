@@ -1,9 +1,11 @@
+res://walking_enemy.tscn
+res://walking_enemy.gd
 res://main.tscn
 res://player.tscn
-res://combo_checker.tscn
-res://web_socket_client.tscn
-res://logger.tscn
+res://level_one.tscn
+res://flying_enemy.tscn
+res://hitbox.tscn
+res://fire.tscn
+res://moving_platform.tscn
+res://checkpoint.tscn
 res://player.gd
-res://logger.gd
-res://main.gd
-res://web_socket_client.gd

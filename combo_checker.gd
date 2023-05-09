@@ -13,7 +13,6 @@ func press_key(key):
 	for curcombo in combos:
 		# if it does, clear the sequence and return the finished combo
 		if check_combo(keysequence, combos[curcombo]):
-			print(curcombo)
 			keysequence.clear()
 			return curcombo
 	

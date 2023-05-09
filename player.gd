@@ -1,70 +1,105 @@
 extends CharacterBody2D
 
-# The speed at which the character moves
-@export var speed = 200
+class_name Player
+
+enum {IDLE, RUNNING, JUMPING, FALLING, ATTACKING, BLOCKING}
+
+# The acceleration of the character
+var acceleration = 50
+# The max speed at which the character moves
+var speed = 200
 # The speed at which the character falls
-@export var gravity = 200
-# The impulse with which the character jumps
-@export var jump_impulse = 80
+var gravity = 200
+# The maximum velocity with which the character jumps
+var jump_impulse = 140
+# The minimum velocity with which the character jumps
+var min_impulse = 70
 # Used when performing unblockable animations
 var unblockable = false
+# The current state of the character
+var state = IDLE
+
+@onready var sprite = $Sprite2D
+@onready var animation_player = $AnimationPlayer
+@onready var sword_box = $Sprite2D/Sword/Hitbox
+@onready var combo_checker = $ComboChecker
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	sword_box.set_deferred("disabled", true)
+
+func die():
+	queue_free()
+	Events.emit_signal("player_died")
+
+func apply_gravity(delta):
+	velocity.y += delta * gravity
+	
+func apply_friction():
+	velocity.x = move_toward(velocity.x, 0, acceleration)
+
+func apply_acceleration(x):
+	velocity.x = move_toward(velocity.x, 200 * x, acceleration)
+	
+func play_unblockable(animation):
+	animation_player.play(animation)
+	unblockable = true
+
+func _on_sword_body_entered(body):
+	if body.is_in_group("Enemy"):
+		body.die()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	# Create the direction vector
-	var direction = Vector2.ZERO
+func _process(delta): 
 	# Determine the direction by reading inputs
-	if Input.is_action_pressed("move_right"):
-		direction.x += 1
-		$AnimatedSprite2D.flip_h = false
-	if Input.is_action_pressed("move_left"):
-		direction.x -= 1
-		$AnimatedSprite2D.flip_h = true
+	var direction = Vector2.ZERO
+	direction.x = Input.get_axis("move_left", "move_right")
 	
-	# Normalize the direction
-	if direction.length() > 0:
-		direction = direction.normalized()
+	# If the player is moving apply acceleration, otherwise friction
+	if direction.x == 0:
+		apply_friction()
+	else:
+		if direction.x > 0:
+			sprite.scale.x = 1
+		else:
+			sprite.scale.x = -1
+		apply_acceleration(direction.x)
 	
-	# Ground velocity
-	velocity.x = direction.x * speed
+	apply_gravity(delta)
 	
-	# Apply gravity
-	velocity.y += delta * gravity
 	# Checks if the character is on the floor
 	if is_on_floor() and !unblockable:
 		# If the player jumps, play the animation and change the y velocity
-		if Input.is_action_just_pressed("jump"):
-			get_parent().log("player_jump")
-			velocity.y -= jump_impulse
-			$AnimatedSprite2D.play("jump")
+		if Input.is_action_pressed("jump"):
+			velocity.y = -jump_impulse
+			animation_player.play("jump")
 		# If the player presses one of the combo buttons, calls ComboChecker and eventually play the animation
 		elif Input.is_action_just_pressed("combo_button_1"):
-			var combo = $ComboChecker.press_key("combo1")
+			var combo = combo_checker.press_key("combo1")
 			if (combo != ""):
-				$AnimatedSprite2D.play(combo)
-				unblockable = true
+				#get_parent().log(combo)
+				play_unblockable(combo)
 		elif Input.is_action_just_pressed("combo_button_2"):
-			var combo = $ComboChecker.press_key("combo2")
+			var combo = combo_checker.press_key("combo2")
 			if (combo != ""):
-				$AnimatedSprite2D.play(combo)
-				unblockable = true
+				#get_parent().log(combo)
+				play_unblockable(combo)
 		# If the player is standing still, play the idle animation
 		elif velocity.x == 0:
-			$AnimatedSprite2D.play("idle") 
-		# If the player is moving play the run animation
+			animation_player.play("idle")
 		else:
-			$AnimatedSprite2D.play("run")
+			animation_player.play("run")
 	elif not is_on_floor():
+		if Input.is_action_just_released("jump") and velocity.y < -min_impulse:
+			velocity.y = -min_impulse
 		# Plays the fall animation when in the air and descending
 		if velocity.y > 0:
-			$AnimatedSprite2D.play("fall")
+			# The character falls faster
+			velocity.y += 5
+			animation_player.play("fall")
 	# Unlock the animations once the unblockable one is done playing
-	elif !$AnimatedSprite2D.is_playing() and unblockable:
+	elif !animation_player.is_playing() and unblockable:
 		unblockable = false
 	
 	# Move the character

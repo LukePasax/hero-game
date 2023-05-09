@@ -1,527 +1,211 @@
-[gd_scene load_steps=110 format=3 uid="uid://cfw8ov2cfsejt"]
+[gd_scene load_steps=14 format=3 uid="uid://cfw8ov2cfsejt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k6i68"]
-[ext_resource type="Texture2D" uid="uid://dfhf5ythbtgss" path="res://Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_0.png" id="1_mj75x"]
-[ext_resource type="Texture2D" uid="uid://fxbb8ovnwoim" path="res://Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_1.png" id="2_ljrpj"]
-[ext_resource type="Texture2D" uid="uid://cvjav81niqv7p" path="res://Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_2.png" id="3_fgvb5"]
-[ext_resource type="Texture2D" uid="uid://bqpbbpvv2cfyx" path="res://Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_3.png" id="4_k7nyu"]
-[ext_resource type="Texture2D" uid="uid://df17dakvt7jak" path="res://Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_4.png" id="5_cbsjj"]
-[ext_resource type="Texture2D" uid="uid://0ffk2w7togch" path="res://Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_5.png" id="6_l7qy2"]
-[ext_resource type="Texture2D" uid="uid://b40chfts2jir2" path="res://Hero Knight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_0.png" id="7_5fssl"]
-[ext_resource type="Texture2D" uid="uid://bx0ael542w7qr" path="res://Hero Knight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_1.png" id="8_24y3h"]
-[ext_resource type="Texture2D" uid="uid://bxxofuxe3kr8a" path="res://Hero Knight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_2.png" id="9_cs2gj"]
-[ext_resource type="Texture2D" uid="uid://bwpaome5dl2i1" path="res://Hero Knight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_3.png" id="10_6v50s"]
-[ext_resource type="Texture2D" uid="uid://cdtoeabytihv1" path="res://Hero Knight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_4.png" id="11_w41tq"]
-[ext_resource type="Texture2D" uid="uid://b82s3fjxa353m" path="res://Hero Knight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_5.png" id="12_kd4ap"]
-[ext_resource type="Texture2D" uid="uid://dxdg0s6ua05dn" path="res://Hero Knight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_0.png" id="13_y4cwm"]
-[ext_resource type="Texture2D" uid="uid://lpdxaus0gxs6" path="res://Hero Knight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_1.png" id="14_vta7s"]
-[ext_resource type="Texture2D" uid="uid://dcn3ptd4jnbie" path="res://Hero Knight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_2.png" id="15_lp8i0"]
-[ext_resource type="Texture2D" uid="uid://c0gucoxoe7ytn" path="res://Hero Knight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_3.png" id="16_lo08k"]
-[ext_resource type="Texture2D" uid="uid://85820w8y30o" path="res://Hero Knight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_4.png" id="17_6qqmq"]
-[ext_resource type="Texture2D" uid="uid://cjxa5ntbawfaw" path="res://Hero Knight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_5.png" id="18_naoe3"]
-[ext_resource type="Texture2D" uid="uid://df8oabcsysu76" path="res://Hero Knight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_6.png" id="19_0e5jc"]
-[ext_resource type="Texture2D" uid="uid://hp8vfsphy7kf" path="res://Hero Knight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_7.png" id="20_qttlo"]
-[ext_resource type="Texture2D" uid="uid://bgfimunsvdu1o" path="res://Hero Knight/Sprites/HeroKnight/Block/HeroKnight_Block_0.png" id="21_uffdb"]
-[ext_resource type="Texture2D" uid="uid://cqxa5tgroyvt6" path="res://Hero Knight/Sprites/HeroKnight/Block/HeroKnight_Block_1.png" id="22_rtqoo"]
-[ext_resource type="Texture2D" uid="uid://bwra51of5uhwp" path="res://Hero Knight/Sprites/HeroKnight/Block/HeroKnight_Block_2.png" id="23_f2pfq"]
-[ext_resource type="Texture2D" uid="uid://dl4ik0nclqeg4" path="res://Hero Knight/Sprites/HeroKnight/Block/HeroKnight_Block_3.png" id="24_q7a23"]
-[ext_resource type="Texture2D" uid="uid://bw7o4l3wadbf3" path="res://Hero Knight/Sprites/HeroKnight/Block/HeroKnight_Block_4.png" id="25_3fpcn"]
-[ext_resource type="Texture2D" uid="uid://qj0plxqg2tt7" path="res://Hero Knight/Sprites/HeroKnight/BlockIdle/HeroKnight_Block Idle_0.png" id="26_lkbi1"]
-[ext_resource type="Texture2D" uid="uid://btb4ssowy02f3" path="res://Hero Knight/Sprites/HeroKnight/BlockIdle/HeroKnight_Block Idle_1.png" id="27_mler0"]
-[ext_resource type="Texture2D" uid="uid://u81prf7uho3e" path="res://Hero Knight/Sprites/HeroKnight/BlockIdle/HeroKnight_Block Idle_2.png" id="28_1d04i"]
-[ext_resource type="Texture2D" uid="uid://dl78srt3rgk8o" path="res://Hero Knight/Sprites/HeroKnight/BlockIdle/HeroKnight_Block Idle_3.png" id="29_qrbyo"]
-[ext_resource type="Texture2D" uid="uid://fgt687l1gpgb" path="res://Hero Knight/Sprites/HeroKnight/BlockIdle/HeroKnight_Block Idle_4.png" id="30_kc7tu"]
-[ext_resource type="Texture2D" uid="uid://blwx6i21iideq" path="res://Hero Knight/Sprites/HeroKnight/BlockIdle/HeroKnight_Block Idle_5.png" id="31_avk71"]
-[ext_resource type="Texture2D" uid="uid://wcvpr6vyt508" path="res://Hero Knight/Sprites/HeroKnight/BlockIdle/HeroKnight_Block Idle_6.png" id="32_bheax"]
-[ext_resource type="Texture2D" uid="uid://gtfsr7dmimyb" path="res://Hero Knight/Sprites/HeroKnight/BlockIdle/HeroKnight_Block Idle_7.png" id="33_eahqe"]
-[ext_resource type="Texture2D" uid="uid://0vk0lncqbsyq" path="res://Hero Knight/Sprites/HeroKnight/BlockNoEffect/HeroKnight_BlockNoEffect_0.png" id="34_5u7oh"]
-[ext_resource type="Texture2D" uid="uid://deucsub43dlsh" path="res://Hero Knight/Sprites/HeroKnight/BlockNoEffect/HeroKnight_BlockNoEffect_1.png" id="35_xy23b"]
-[ext_resource type="Texture2D" uid="uid://cwki0lqxm5r3m" path="res://Hero Knight/Sprites/HeroKnight/BlockNoEffect/HeroKnight_BlockNoEffect_2.png" id="36_5hwxo"]
-[ext_resource type="Texture2D" uid="uid://cymbmes03vvg0" path="res://Hero Knight/Sprites/HeroKnight/BlockNoEffect/HeroKnight_BlockNoEffect_3.png" id="37_wuqre"]
-[ext_resource type="Texture2D" uid="uid://b6gwiu3cxipir" path="res://Hero Knight/Sprites/HeroKnight/BlockNoEffect/HeroKnight_BlockNoEffect_4.png" id="38_atuk5"]
-[ext_resource type="Texture2D" uid="uid://ce03q0lm4kqf2" path="res://Hero Knight/Sprites/HeroKnight/Death/HeroKnight_Death_0.png" id="39_1gwhy"]
-[ext_resource type="Texture2D" uid="uid://bh1le0lave6bc" path="res://Hero Knight/Sprites/HeroKnight/Death/HeroKnight_Death_1.png" id="40_i5s0k"]
-[ext_resource type="Texture2D" uid="uid://dbmnqvxa45vmo" path="res://Hero Knight/Sprites/HeroKnight/Death/HeroKnight_Death_2.png" id="41_wku3r"]
-[ext_resource type="Texture2D" uid="uid://b2jminr3s60iy" path="res://Hero Knight/Sprites/HeroKnight/Death/HeroKnight_Death_3.png" id="42_8do5o"]
-[ext_resource type="Texture2D" uid="uid://d18spp03kd33q" path="res://Hero Knight/Sprites/HeroKnight/Death/HeroKnight_Death_4.png" id="43_kqpib"]
-[ext_resource type="Texture2D" uid="uid://cwoouyr3bxhjj" path="res://Hero Knight/Sprites/HeroKnight/Death/HeroKnight_Death_5.png" id="44_mmlbu"]
-[ext_resource type="Texture2D" uid="uid://e2c7le6xd2ik" path="res://Hero Knight/Sprites/HeroKnight/Death/HeroKnight_Death_6.png" id="45_o337x"]
-[ext_resource type="Texture2D" uid="uid://b72as6sqyy85u" path="res://Hero Knight/Sprites/HeroKnight/Death/HeroKnight_Death_7.png" id="46_37tk5"]
-[ext_resource type="Texture2D" uid="uid://c8beshvdgqwe3" path="res://Hero Knight/Sprites/HeroKnight/Death/HeroKnight_Death_8.png" id="47_1soo5"]
-[ext_resource type="Texture2D" uid="uid://ciqcojwidha6b" path="res://Hero Knight/Sprites/HeroKnight/Death/HeroKnight_Death_9.png" id="48_opfoh"]
-[ext_resource type="Texture2D" uid="uid://b52xj2dddvrpj" path="res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/HeroKnight_DeathNoBlood_0.png" id="49_uxlqt"]
-[ext_resource type="Texture2D" uid="uid://bb5xsms3fkowf" path="res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/HeroKnight_DeathNoBlood_1.png" id="50_lw74q"]
-[ext_resource type="Texture2D" uid="uid://cdymgofjpc7h8" path="res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/HeroKnight_DeathNoBlood_2.png" id="51_gdg5k"]
-[ext_resource type="Texture2D" uid="uid://cueo3fno3x2vh" path="res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/HeroKnight_DeathNoBlood_3.png" id="52_skij4"]
-[ext_resource type="Texture2D" uid="uid://bjf8qbnp5qdx5" path="res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/HeroKnight_DeathNoBlood_4.png" id="53_6vhoq"]
-[ext_resource type="Texture2D" uid="uid://b815p3mtvxvmb" path="res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/HeroKnight_DeathNoBlood_5.png" id="54_te482"]
-[ext_resource type="Texture2D" uid="uid://dfs4qy3xu67ud" path="res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/HeroKnight_DeathNoBlood_6.png" id="55_fb0tc"]
-[ext_resource type="Texture2D" uid="uid://cw8ml4wbfh2bi" path="res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/HeroKnight_DeathNoBlood_7.png" id="56_tiq3c"]
-[ext_resource type="Texture2D" uid="uid://db2xariio0o23" path="res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/HeroKnight_DeathNoBlood_8.png" id="57_f1gbg"]
-[ext_resource type="Texture2D" uid="uid://c6vchdtdgo3nr" path="res://Hero Knight/Sprites/HeroKnight/DeathNoBlood/HeroKnight_DeathNoBlood_9.png" id="58_w7d4t"]
-[ext_resource type="Texture2D" uid="uid://bj47askj1swlw" path="res://Hero Knight/Sprites/HeroKnight/Fall/HeroKnight_Fall_0.png" id="59_tsrhp"]
-[ext_resource type="Texture2D" uid="uid://dvoficgapc3l" path="res://Hero Knight/Sprites/HeroKnight/Fall/HeroKnight_Fall_1.png" id="60_p40qg"]
-[ext_resource type="Texture2D" uid="uid://c4d5jnxcu24us" path="res://Hero Knight/Sprites/HeroKnight/Fall/HeroKnight_Fall_2.png" id="61_wuwe6"]
-[ext_resource type="Texture2D" uid="uid://coobrugdji3wb" path="res://Hero Knight/Sprites/HeroKnight/Fall/HeroKnight_Fall_3.png" id="62_jupxn"]
-[ext_resource type="Texture2D" uid="uid://b3kg75i3liph3" path="res://Hero Knight/Sprites/HeroKnight/Hurt/HeroKnight_Hurt_0.png" id="63_lrjy1"]
-[ext_resource type="Texture2D" uid="uid://c8mo1bvbkablx" path="res://Hero Knight/Sprites/HeroKnight/Hurt/HeroKnight_Hurt_1.png" id="64_g5gwn"]
-[ext_resource type="Texture2D" uid="uid://dbu3psem66dtc" path="res://Hero Knight/Sprites/HeroKnight/Hurt/HeroKnight_Hurt_2.png" id="65_niiwj"]
-[ext_resource type="Texture2D" uid="uid://bds5xmu52b2hv" path="res://Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" id="66_tt61a"]
-[ext_resource type="Texture2D" uid="uid://mh4mn2homu0p" path="res://Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_1.png" id="67_1sgv6"]
-[ext_resource type="Texture2D" uid="uid://db0p2hutxa6dh" path="res://Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_2.png" id="68_f436d"]
-[ext_resource type="Texture2D" uid="uid://boqyuoyl4lpah" path="res://Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_3.png" id="69_cdvdq"]
-[ext_resource type="Texture2D" uid="uid://bnb4e6gx60k5n" path="res://Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_4.png" id="70_5qnqa"]
-[ext_resource type="Texture2D" uid="uid://cb75v8v4hdwtm" path="res://Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_5.png" id="71_abxey"]
-[ext_resource type="Texture2D" uid="uid://nq72jcp7rsn7" path="res://Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_6.png" id="72_vc87x"]
-[ext_resource type="Texture2D" uid="uid://dcqsnjrlokvdx" path="res://Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_7.png" id="73_udytr"]
-[ext_resource type="Texture2D" uid="uid://c17ylawl2ryd3" path="res://Hero Knight/Sprites/HeroKnight/Jump/HeroKnight_Jump_0.png" id="74_5r7b7"]
-[ext_resource type="Texture2D" uid="uid://bq4k113ii2dcf" path="res://Hero Knight/Sprites/HeroKnight/Jump/HeroKnight_Jump_1.png" id="75_y7j38"]
-[ext_resource type="Texture2D" uid="uid://d0rcvdnnqpx8e" path="res://Hero Knight/Sprites/HeroKnight/Jump/HeroKnight_Jump_2.png" id="76_nle3o"]
-[ext_resource type="Texture2D" uid="uid://uavjmk8ocx1m" path="res://Hero Knight/Sprites/HeroKnight/LedgeGrab/HeroKnight_Grab Ledge_0.png" id="77_chgfd"]
-[ext_resource type="Texture2D" uid="uid://dnk8woyaqmhap" path="res://Hero Knight/Sprites/HeroKnight/LedgeGrab/HeroKnight_Grab Ledge_1.png" id="78_ocw0e"]
-[ext_resource type="Texture2D" uid="uid://ua2afrmnjqb5" path="res://Hero Knight/Sprites/HeroKnight/LedgeGrab/HeroKnight_Grab Ledge_2.png" id="79_tabln"]
-[ext_resource type="Texture2D" uid="uid://6fh0kxx620ha" path="res://Hero Knight/Sprites/HeroKnight/LedgeGrab/HeroKnight_Grab Ledge_3.png" id="80_g4mq4"]
-[ext_resource type="Texture2D" uid="uid://cv746vcncpbrj" path="res://Hero Knight/Sprites/HeroKnight/LedgeGrab/HeroKnight_Grab Ledge_4.png" id="81_bh5lg"]
-[ext_resource type="Texture2D" uid="uid://cwf5f6kysrinm" path="res://Hero Knight/Sprites/HeroKnight/Roll/HeroKnight_Roll_0.png" id="82_5p2mt"]
-[ext_resource type="Texture2D" uid="uid://4jlfc1exvk7p" path="res://Hero Knight/Sprites/HeroKnight/Roll/HeroKnight_Roll_1.png" id="83_8sg1w"]
-[ext_resource type="Texture2D" uid="uid://byjad43nh844h" path="res://Hero Knight/Sprites/HeroKnight/Roll/HeroKnight_Roll_2.png" id="84_3o4kp"]
-[ext_resource type="Texture2D" uid="uid://cldicwtmlu64o" path="res://Hero Knight/Sprites/HeroKnight/Roll/HeroKnight_Roll_3.png" id="85_g8ufg"]
-[ext_resource type="Texture2D" uid="uid://b0koehlwkj5tu" path="res://Hero Knight/Sprites/HeroKnight/Roll/HeroKnight_Roll_4.png" id="86_kt5um"]
-[ext_resource type="Texture2D" uid="uid://eo6qt5kita4r" path="res://Hero Knight/Sprites/HeroKnight/Roll/HeroKnight_Roll_5.png" id="87_7vugy"]
-[ext_resource type="Texture2D" uid="uid://bsh6550ceieaa" path="res://Hero Knight/Sprites/HeroKnight/Roll/HeroKnight_Roll_6.png" id="88_4nkbi"]
-[ext_resource type="Texture2D" uid="uid://cbag2meue0abt" path="res://Hero Knight/Sprites/HeroKnight/Roll/HeroKnight_Roll_7.png" id="89_wwffo"]
-[ext_resource type="Texture2D" uid="uid://d0p3yxfqk55yk" path="res://Hero Knight/Sprites/HeroKnight/Roll/HeroKnight_Roll_8.png" id="90_3n3eg"]
-[ext_resource type="Texture2D" uid="uid://da0ljy6yilqjh" path="res://Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_0.png" id="91_w3u3h"]
-[ext_resource type="Texture2D" uid="uid://coxqk73r7aivj" path="res://Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_1.png" id="92_o5mv5"]
-[ext_resource type="Texture2D" uid="uid://diqkxtrcj7teu" path="res://Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_2.png" id="93_vjcni"]
-[ext_resource type="Texture2D" uid="uid://qt1bi0o170h4" path="res://Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_3.png" id="94_d3we4"]
-[ext_resource type="Texture2D" uid="uid://duc8bovv63ymj" path="res://Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_4.png" id="95_1t0e8"]
-[ext_resource type="Texture2D" uid="uid://c7n0tvgujkyij" path="res://Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_5.png" id="96_rpud4"]
-[ext_resource type="Texture2D" uid="uid://c0c570s1djvv" path="res://Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_6.png" id="97_t2cn0"]
-[ext_resource type="Texture2D" uid="uid://dn6lhrnkpxe" path="res://Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_7.png" id="98_q428i"]
-[ext_resource type="Texture2D" uid="uid://bev1ismn18nl2" path="res://Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_8.png" id="99_h43t7"]
-[ext_resource type="Texture2D" uid="uid://dngxh32le5f1y" path="res://Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_9.png" id="100_85acb"]
-[ext_resource type="Texture2D" uid="uid://cnrwcgt27kjg1" path="res://Hero Knight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_0.png" id="101_scry7"]
-[ext_resource type="Texture2D" uid="uid://idubgvqar4hd" path="res://Hero Knight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_1.png" id="102_cegka"]
-[ext_resource type="Texture2D" uid="uid://druxkv3ifmkmk" path="res://Hero Knight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_2.png" id="103_a41xd"]
-[ext_resource type="Texture2D" uid="uid://cnshc2jn5q4gs" path="res://Hero Knight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_3.png" id="104_bntg7"]
-[ext_resource type="Texture2D" uid="uid://dmx265vt7i3q1" path="res://Hero Knight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_4.png" id="105_aij7w"]
+[ext_resource type="Texture2D" uid="uid://cppfa8m2dfeyx" path="res://Hero Knight/Sprites/HeroKnight/HeroKnightNoWeapons.png" id="3_xrbb4"]
 [ext_resource type="PackedScene" uid="uid://dsi7tkmhru1lt" path="res://combo_checker.tscn" id="107_st4fu"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_w18tu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_mj75x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ljrpj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_fgvb5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_k7nyu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_cbsjj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_l7qy2")
-}],
-"loop": false,
-"name": &"attack1",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_5fssl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_24y3h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_cs2gj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_6v50s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_w41tq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_kd4ap")
-}],
-"loop": false,
-"name": &"attack2",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_y4cwm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_vta7s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_lp8i0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_lo08k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_6qqmq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_naoe3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_0e5jc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_qttlo")
-}],
-"loop": false,
-"name": &"attack3",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("21_uffdb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_rtqoo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_f2pfq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_q7a23")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_3fpcn")
-}],
-"loop": false,
-"name": &"block",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("26_lkbi1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_mler0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_1d04i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_qrbyo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_kc7tu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_avk71")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_bheax")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_eahqe")
-}],
-"loop": true,
-"name": &"block_idle",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("34_5u7oh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_xy23b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_5hwxo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_wuqre")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_atuk5")
-}],
-"loop": false,
-"name": &"block_no_effect",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("39_1gwhy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_i5s0k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_wku3r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_8do5o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_kqpib")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_mmlbu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_o337x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_37tk5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_1soo5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_opfoh")
-}],
-"loop": false,
-"name": &"death",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("49_uxlqt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_lw74q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51_gdg5k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52_skij4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53_6vhoq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("54_te482")
-}, {
-"duration": 1.0,
-"texture": ExtResource("55_fb0tc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("56_tiq3c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("57_f1gbg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("58_w7d4t")
-}],
-"loop": false,
-"name": &"death_no_blood",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("59_tsrhp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_p40qg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("61_wuwe6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("62_jupxn")
-}],
-"loop": true,
-"name": &"fall",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("63_lrjy1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("64_g5gwn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_niiwj")
-}],
-"loop": false,
-"name": &"hurt",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("66_tt61a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("67_1sgv6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("68_f436d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("69_cdvdq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("70_5qnqa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("71_abxey")
-}, {
-"duration": 1.0,
-"texture": ExtResource("72_vc87x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("73_udytr")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("74_5r7b7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("75_y7j38")
-}, {
-"duration": 1.0,
-"texture": ExtResource("76_nle3o")
-}],
-"loop": false,
-"name": &"jump",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("77_chgfd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("78_ocw0e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("79_tabln")
-}, {
-"duration": 1.0,
-"texture": ExtResource("80_g4mq4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("81_bh5lg")
-}],
-"loop": false,
-"name": &"ledge_grab",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("82_5p2mt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("83_8sg1w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("84_3o4kp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("85_g8ufg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("86_kt5um")
-}, {
-"duration": 1.0,
-"texture": ExtResource("87_7vugy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("88_4nkbi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("89_wwffo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("90_3n3eg")
-}],
-"loop": false,
-"name": &"roll",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("91_w3u3h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("92_o5mv5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("93_vjcni")
-}, {
-"duration": 1.0,
-"texture": ExtResource("94_d3we4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("95_1t0e8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("96_rpud4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("97_t2cn0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("98_q428i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("99_h43t7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("100_85acb")
-}],
-"loop": true,
-"name": &"run",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("101_scry7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("102_cegka")
-}, {
-"duration": 1.0,
-"texture": ExtResource("103_a41xd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("104_bntg7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("105_aij7w")
-}],
-"loop": true,
-"name": &"wall_slide",
-"speed": 10.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmdu0"]
-size = Vector2(23, 41)
+size = Vector2(23, 39)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frspn"]
+size = Vector2(36, 30)
+
+[sub_resource type="Animation" id="Animation_aen5x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(8, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword/Hitbox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nelqg"]
+resource_name = "attack1"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(8, 1), Vector2i(9, 1), Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword/Hitbox:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ttvby"]
+resource_name = "block"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(5, 6), Vector2i(6, 6), Vector2i(7, 6), Vector2i(8, 6), Vector2i(9, 6), Vector2i(0, 7)]
+}
+
+[sub_resource type="Animation" id="Animation_xkvk4"]
+resource_name = "fall"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4)]
+}
+
+[sub_resource type="Animation" id="Animation_j4g2d"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_r42tc"]
+resource_name = "jump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(8, 3), Vector2i(9, 3), Vector2i(0, 4)]
+}
+
+[sub_resource type="Animation" id="Animation_mvcmb"]
+resource_name = "run"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gs04y"]
+_data = {
+"RESET": SubResource("Animation_aen5x"),
+"attack1": SubResource("Animation_nelqg"),
+"block": SubResource("Animation_ttvby"),
+"fall": SubResource("Animation_xkvk4"),
+"idle": SubResource("Animation_j4g2d"),
+"jump": SubResource("Animation_r42tc"),
+"run": SubResource("Animation_mvcmb")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 10
+collision_layer = 2
 script = ExtResource("1_k6i68")
-jump_impulse = 100
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_w18tu")
-animation = &"death"
-frame = 9
-frame_progress = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 5)
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 5.5)
 shape = SubResource("RectangleShape2D_tmdu0")
 
 [node name="ComboChecker" parent="." instance=ExtResource("107_st4fu")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_xrbb4")
+hframes = 10
+vframes = 9
+frame = 38
+
+[node name="Sword" type="Area2D" parent="Sprite2D"]
+position = Vector2(29, 1)
+collision_layer = 0
+collision_mask = 2
+
+[node name="Hitbox" type="CollisionShape2D" parent="Sprite2D/Sword"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_frspn")
+debug_color = Color(0.992157, 0, 0.266667, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_gs04y")
+}
+
+[connection signal="body_entered" from="Sprite2D/Sword" to="." method="_on_sword_body_entered"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6fkaac8jmbq3"]
+
+[ext_resource type="Texture2D" uid="uid://icgjuaepmo5g" path="res://Levels/castle.png" id="1_2kpy1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnmxh"]
+size = Vector2(84, 15)
+
+[node name="MovingPlatform" type="AnimatableBody2D"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_qnmxh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2kpy1")
+region_enabled = true
+region_rect = Rect2(0.2938, 266.284, 84.7448, 16.2787)
