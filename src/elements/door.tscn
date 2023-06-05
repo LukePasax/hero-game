@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b22g6iavumdgp"]
+
+[ext_resource type="Script" path="res://src/elements/door.gd" id="1_gyex2"]
+[ext_resource type="Texture2D" uid="uid://dgk6r2xyn7y4h" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/door.png" id="2_7uxhe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymc44"]
+size = Vector2(40, 60)
+
+[node name="Door" type="Area2D" groups=["Door"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_gyex2")
+level = "Sword"
+
+[node name="Destination" type="Sprite2D" parent="."]
+position = Vector2(0, -51)
+scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7uxhe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ymc44")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -30)
+target_position = Vector2(0, 60)
+collision_mask = 2

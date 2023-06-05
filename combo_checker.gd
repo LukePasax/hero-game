@@ -4,7 +4,7 @@ var keysequence = []
 # The max number of key-presses in a combo
 var maxcombo = 5
 # The list of possible combos
-var combos = {"attack1" : ["combo1","combo1"], "block" : ["combo2", "combo2"]}
+var combos = {"attack1" : ["combo2","combo1", "combo1"], "block" : ["combo1", "combo2", "combo2"]}
 
 func press_key(key):
 	

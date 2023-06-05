@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 class_name Player
 
-enum {IDLE, RUNNING, JUMPING, FALLING, ATTACKING, BLOCKING}
-
 # The acceleration of the character
 var acceleration = 50
 # The max speed at which the character moves
@@ -16,8 +14,9 @@ var jump_impulse = 140
 var min_impulse = 70
 # Used when performing unblockable animations
 var unblockable = false
-# The current state of the character
-var state = IDLE
+var holding = false
+# Says if the character is blocking
+@export var blocking = false
 
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
@@ -27,10 +26,35 @@ var state = IDLE
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sword_box.set_deferred("disabled", true)
+	load_texture()
+
+func load_texture():
+	if Events.sword and Events.shield:
+		sprite.texture = load("res://Hero Knight/Sprites/HeroKnight/HeroKnight.png")
+	elif Events.sword:
+		sprite.texture = load("res://Hero Knight/Sprites/HeroKnight/HeroKnightSword.png")
+	elif Events.shield:
+		sprite.texture = load("res://Hero Knight/Sprites/HeroKnight/HeroKnightShield.png")
+	else:
+		sprite.texture = load("res://Hero Knight/Sprites/HeroKnight/HeroKnightNoWeapons.png")
+
+func pick_up_sword():
+	Events.sword = true
+	load_texture()
+
+func pick_up_shield():
+	Events.shield = true
+	load_texture()
 
 func die():
-	queue_free()
 	Events.emit_signal("player_died")
+
+func hit():
+	if blocking:
+		return false
+	else:
+		die()
+		return true
 
 func apply_gravity(delta):
 	velocity.y += delta * gravity
@@ -40,6 +64,10 @@ func apply_friction():
 
 func apply_acceleration(x):
 	velocity.x = move_toward(velocity.x, 200 * x, acceleration)
+
+func hold():
+	animation_player.play("idle")
+	holding = true
 	
 func play_unblockable(animation):
 	animation_player.play(animation)
@@ -48,7 +76,6 @@ func play_unblockable(animation):
 func _on_sword_body_entered(body):
 	if body.is_in_group("Enemy"):
 		body.die()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta): 
@@ -71,16 +98,17 @@ func _process(delta):
 	# Checks if the character is on the floor
 	if is_on_floor() and !unblockable:
 		# If the player jumps, play the animation and change the y velocity
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_pressed("jump") and !holding:
 			velocity.y = -jump_impulse
 			animation_player.play("jump")
 		# If the player presses one of the combo buttons, calls ComboChecker and eventually play the animation
-		elif Input.is_action_just_pressed("combo_button_1"):
+		elif Input.is_action_just_pressed("combo_button_1") and Events.sword:
 			var combo = combo_checker.press_key("combo1")
 			if (combo != ""):
 				#get_parent().log(combo)
 				play_unblockable(combo)
-		elif Input.is_action_just_pressed("combo_button_2"):
+				holding = false
+		elif Input.is_action_just_pressed("combo_button_2") and Events.shield:
 			var combo = combo_checker.press_key("combo2")
 			if (combo != ""):
 				#get_parent().log(combo)
@@ -88,7 +116,7 @@ func _process(delta):
 		# If the player is standing still, play the idle animation
 		elif velocity.x == 0:
 			animation_player.play("idle")
-		else:
+		elif !holding:
 			animation_player.play("run")
 	elif not is_on_floor():
 		if Input.is_action_just_released("jump") and velocity.y < -min_impulse:
@@ -103,5 +131,5 @@ func _process(delta):
 		unblockable = false
 	
 	# Move the character
-	if !unblockable:
+	if !unblockable and !holding:
 		move_and_slide()

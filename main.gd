@@ -1,18 +1,12 @@
 extends Node2D
 
-const PlayerScene = preload("res://player.tscn")
-
 @onready var player = $Player
 @onready var respawn_timer = $RespawnTimer
 var player_spawn = Vector2.ZERO
 var recording = false
 
 func _on_player_died():
-	respawn_timer.start()
-	await respawn_timer.timeout
-	var player = PlayerScene.instantiate()
 	player.position = player_spawn
-	add_child(player)
 
 func _on_hit_checkpoint(checkpoint_position):
 	player_spawn = checkpoint_position

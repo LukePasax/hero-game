@@ -1,7 +1,12 @@
-res://Hero Knight/Sprites/HeroKnight
-res://Enemies/Skeleton
-res://Levels
-res://Levels/oak_woods_v1.0
+res://resources
+C:/Users/Eldar/hero-game
+res://src/elements
+res://src/enemies
+res://resources/Enemies/Bringer-Of-Death/SpriteSheet
+res://levels
 res://
-res://Enemies/Flying_eye
-res://Enemies/Fire
+res://resources/Levels
+res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations
+res://resources/Enemies/fireball_V_1_1
+res://Hero Knight/Sprites/HeroKnight
+res://Levels

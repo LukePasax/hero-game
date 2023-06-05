@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" uid="uid://cw31xeqkclp5b" path="res://resources/Levels/shield.png" id="1_6oqcg"]
+[ext_resource type="Script" path="res://src/elements/shield.gd" id="1_e8acm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyyph"]
+size = Vector2(18, 19.25)
+
+[node name="Shield" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_e8acm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6oqcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.625)
+shape = SubResource("RectangleShape2D_iyyph")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
