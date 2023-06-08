@@ -1,13 +1,12 @@
-res://src/enemies/boss.tscn
-res://src/enemies/boss.gd
 res://player.tscn
+res://player.gd
 res://levels/level_sword.tscn
 res://combo_checker.tscn
 res://src/elements/door.tscn
 res://src/elements/blockzone.tscn
-res://levels/level_final.tscn
+res://src/enemies/boss.tscn
 res://src/enemies/fireball.tscn
 res://src/enemies/flying_enemy.tscn
 res://src/elements/boss_trigger.tscn
 res://src/enemies/walking_enemy.tscn
-res://src/enemies/walking_enemy.gd
+res://levels/level_final.tscn

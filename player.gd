@@ -22,6 +22,8 @@ var holding = false
 @onready var animation_player = $AnimationPlayer
 @onready var sword_box = $Sprite2D/Sword/Hitbox
 @onready var combo_checker = $ComboChecker
+@onready var hit_sound = $HitSound
+@onready var jump_sound = $JumpSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,6 +49,8 @@ func pick_up_shield():
 	load_texture()
 
 func die():
+	Input.start_joy_vibration(0,0.5,0.5,1)
+	hit_sound.play()
 	Events.emit_signal("player_died")
 
 func hit():
@@ -99,6 +103,7 @@ func _process(delta):
 	if is_on_floor() and !unblockable:
 		# If the player jumps, play the animation and change the y velocity
 		if Input.is_action_pressed("jump") and !holding:
+			jump_sound.play()
 			velocity.y = -jump_impulse
 			animation_player.play("jump")
 		# If the player presses one of the combo buttons, calls ComboChecker and eventually play the animation

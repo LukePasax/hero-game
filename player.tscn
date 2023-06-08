@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cfw8ov2cfsejt"]
+[gd_scene load_steps=16 format=3 uid="uid://cfw8ov2cfsejt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k6i68"]
 [ext_resource type="Texture2D" uid="uid://cppfa8m2dfeyx" path="res://Hero Knight/Sprites/HeroKnight/HeroKnightNoWeapons.png" id="3_xrbb4"]
+[ext_resource type="AudioStream" uid="uid://c8x1mhv56wh4s" path="res://resources/Sounds/hitHurt.wav" id="4_i1n07"]
+[ext_resource type="AudioStream" uid="uid://d27xdmoclo30l" path="res://resources/Sounds/jump.wav" id="5_kjb1p"]
 [ext_resource type="PackedScene" uid="uid://dsi7tkmhru1lt" path="res://combo_checker.tscn" id="107_st4fu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmdu0"]
@@ -231,5 +233,11 @@ root_node = NodePath("../Sprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_gs04y")
 }
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_i1n07")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kjb1p")
 
 [connection signal="body_entered" from="Sprite2D/Sword" to="." method="_on_sword_body_entered"]
