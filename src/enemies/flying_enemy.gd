@@ -12,6 +12,8 @@ var fireball = preload("res://src/enemies/fireball.tscn")
 
 var state = MOVE
 
+
+# The enemy attacks every 2 seconds should the player be within 300 pixels of the enemy.
 func _on_attack_timer_timeout():
 	player = get_tree().get_first_node_in_group("Player")
 	if player != null and player.position.x > enemy.global_position.x-300 and player.position.x < enemy.global_position.x+300:
@@ -20,6 +22,7 @@ func _on_attack_timer_timeout():
 		timer.start()
 	
 
+# The enemy attacks the player with a fireball.
 func _on_animated_sprite_2d_animation_finished():
 	if sprite.animation == "attack":
 		var fb = fireball.instantiate()

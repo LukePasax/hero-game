@@ -18,6 +18,7 @@ func _ready():
 	Events.connect("hit_checkpoint", _on_hit_checkpoint)
 
 
+# A function that logs an action and the time it was performed
 func log(action):
 	if recording:
 		$Logger.log($WebSocketClient.get_recording_time(), action)

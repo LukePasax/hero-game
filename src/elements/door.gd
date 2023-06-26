@@ -6,18 +6,22 @@ extends Area2D
 @onready var player_check = $RayCast2D
 var dest
 
+# Loads the door texture and sets the destination scene based on the item the player has
 func load_sword():
 	dest_sprite.texture = load("res://resources/Levels/sword.png")
 	dest = "res://levels/level_sword.tscn"
 
+# Loads the door texture and sets the destination scene based on the item the player has
 func load_shield():
 	dest_sprite.texture = load("res://resources/Levels/shield.png")
 	dest = "res://levels/level_shield.tscn"
-	
+
+# Loads the door texture and sets the destination scene based on the item the player has
 func load_final():
 	dest_sprite.texture = load("res://resources/Levels/skull.png")
 	dest = "res://levels/level_final.tscn"
 
+# Called when the player picks up an item and when the door is first loadeds
 func setup():
 	print("ah")
 	if level == "Sword":

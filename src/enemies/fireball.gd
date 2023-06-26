@@ -9,6 +9,7 @@ var shooter
 var seeking = false
 
 
+# Called to check if the fireball hit the player, the boss, an enemy or a wall
 func _on_body_entered(body):
 	if body is Player:
 		var died = body.hit()
@@ -23,6 +24,7 @@ func _on_body_entered(body):
 	else:
 		queue_free()
 
+# Called to set the enemy that shot the fireball so that it can seek it
 func set_enemy(enemy):
 	shooter = enemy
 

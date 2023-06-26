@@ -27,9 +27,11 @@ var holding = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	vibrate()
 	sword_box.set_deferred("disabled", true)
 	load_texture()
 
+# A function that loads the correct texture based on the weapons the player has
 func load_texture():
 	if Events.sword and Events.shield:
 		sprite.texture = load("res://Hero Knight/Sprites/HeroKnight/HeroKnight.png")
@@ -40,19 +42,27 @@ func load_texture():
 	else:
 		sprite.texture = load("res://Hero Knight/Sprites/HeroKnight/HeroKnightNoWeapons.png")
 
+# Called when the player picks up the sword
 func pick_up_sword():
 	Events.sword = true
 	load_texture()
 
+# Called when the player picks up the shield
 func pick_up_shield():
 	Events.shield = true
 	load_texture()
 
+# A function to vibrate the controller
+func vibrate():
+	Input.start_joy_vibration(0, 1, 1, 0.5)
+
+# Called when the player dies
 func die():
-	Input.start_joy_vibration(0,0.5,0.5,1)
+	vibrate()
 	hit_sound.play()
 	Events.emit_signal("player_died")
 
+# Called when the player is hit by a projectile
 func hit():
 	if blocking:
 		return false
@@ -69,20 +79,23 @@ func apply_friction():
 func apply_acceleration(x):
 	velocity.x = move_toward(velocity.x, 200 * x, acceleration)
 
+# A function that holds the player in place
 func hold():
 	animation_player.play("idle")
 	holding = true
-	
+
+# A function that plays an unblockable animation
 func play_unblockable(animation):
 	animation_player.play(animation)
 	unblockable = true
 
+# Called when the player hits an enemy with the sword
 func _on_sword_body_entered(body):
 	if body.is_in_group("Enemy"):
 		body.die()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta): 
+func _process(delta):
 	# Determine the direction by reading inputs
 	var direction = Vector2.ZERO
 	direction.x = Input.get_axis("move_left", "move_right")

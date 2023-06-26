@@ -29,6 +29,7 @@ func _ready():
 	Events.connect("player_died", setup)
 	setup()
 
+# Called to reset the boss
 func setup():
 	attack_timer.stop()
 	cast_timer.stop()
@@ -39,6 +40,7 @@ func setup():
 	direction = Vector2.LEFT
 	state = states.IDLE
 
+# Activate the boss
 func start():
 	state = states.MOVE
 	attack_timer.start()
@@ -53,12 +55,15 @@ func _on_attack_timer_timeout():
 func _on_cast_timer_timeout():
 	state = states.CAST
 
+# Called to shoot a fireball at the player
 func cast():
 	var fb = fireball.instantiate()
 	fb.set_enemy(hurtbox)
 	fb.global_position = cast_spawn.global_position
 	get_tree().get_root().add_child(fb)
 
+
+# Called when the boss is hit. if the boss is hit an hp amount of times, it dies
 func die():
 	hp -= 1
 	health_bar.value = hp
@@ -72,6 +77,7 @@ func die():
 func invert_dir():
 	direction.x *= -1
 
+# Called to change the boss's phase
 func change_phase():
 	attack_timer.stop()
 	cast_timer.stop()
