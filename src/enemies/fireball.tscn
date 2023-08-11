@@ -48,7 +48,7 @@ _data = {
 "flight": SubResource("Animation_dl3hu")
 }
 
-[node name="Fireball" type="Area2D"]
+[node name="Fireball" type="Area2D" groups=["Fireball"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_r6g12")

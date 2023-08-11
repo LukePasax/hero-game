@@ -44,6 +44,7 @@ func attack_state():
 
 func dying_state():
 	animation.pause()
+	get_parent().log("Enemy slain")
 	sprite.play("death")
 
 func _on_hitbox_area_entered(area):

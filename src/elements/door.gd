@@ -23,7 +23,6 @@ func load_final():
 
 # Called when the player picks up an item and when the door is first loadeds
 func setup():
-	print("ah")
 	if level == "Sword":
 		load_sword()
 	if level == "Shield":

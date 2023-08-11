@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://drped4vm1u8ns"]
+[gd_scene load_steps=7 format=3 uid="uid://cgvjoexp074r"]
 
 [ext_resource type="PackedScene" uid="uid://cfw8ov2cfsejt" path="res://player.tscn" id="1_dgwgk"]
 [ext_resource type="Script" path="res://main.gd" id="1_y4gjk"]
 [ext_resource type="PackedScene" uid="uid://ba2jncpgsg82m" path="res://web_socket_client.tscn" id="3_18wuh"]
 [ext_resource type="PackedScene" uid="uid://dh7qwuluf6w5p" path="res://logger.tscn" id="4_ul880"]
+[ext_resource type="AudioStream" uid="uid://dmfcdtnrtocgd" path="res://resources/Music/Ambient 9.wav" id="5_3xrd1"]
+[ext_resource type="AudioStream" uid="uid://vwq8x6i6b8ve" path="res://resources/Music/Action 4 (Loop).wav" id="6_55ivi"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_y4gjk")
@@ -16,3 +18,10 @@ position = Vector2(937, 849)
 [node name="Logger" parent="." instance=ExtResource("4_ul880")]
 
 [node name="RespawnTimer" type="Timer" parent="."]
+
+[node name="AmbientMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3xrd1")
+autoplay = true
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_55ivi")

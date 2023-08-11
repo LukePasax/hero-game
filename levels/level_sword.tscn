@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://coed58md2avfd"]
+[gd_scene load_steps=19 format=3 uid="uid://coed58md2avfd"]
 
-[ext_resource type="PackedScene" uid="uid://drped4vm1u8ns" path="res://main.tscn" id="1_sacgf"]
+[ext_resource type="PackedScene" uid="uid://cgvjoexp074r" path="res://main.tscn" id="1_sacgf"]
 [ext_resource type="Texture2D" uid="uid://bd7eprmdmyepb" path="res://resources/Levels/oak_woods_v1.0/oak_woods_tileset.png" id="2_2vt47"]
 [ext_resource type="PackedScene" uid="uid://12lmwy38utnt" path="res://src/enemies/hitbox.tscn" id="2_agx16"]
 [ext_resource type="Texture2D" uid="uid://icgjuaepmo5g" path="res://resources/Levels/castle.png" id="3_ygi3i"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b22g6iavumdgp" path="res://src/elements/door.tscn" id="9_4sayb"]
 [ext_resource type="PackedScene" uid="uid://df8x311d1dlu3" path="res://src/elements/blockzone.tscn" id="9_mfwy6"]
 [ext_resource type="PackedScene" path="res://src/elements/sword.tscn" id="9_uu30o"]
+[ext_resource type="PackedScene" uid="uid://brhxv3orricnm" path="res://src/elements/hanging_ally.tscn" id="11_5k1tq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s20wa"]
 size = Vector2(6978, 422)
@@ -1275,7 +1276,7 @@ libraries = {
 position = Vector2(873, 828)
 
 [node name="Checkpoint2" parent="." index="11" instance=ExtResource("6_xwbqk")]
-position = Vector2(1381, 828)
+position = Vector2(1378, 813)
 
 [node name="Checkpoint3" parent="." index="12" instance=ExtResource("6_xwbqk")]
 position = Vector2(1829, 795)
@@ -1292,3 +1293,6 @@ position = Vector2(607, 847)
 
 [node name="Blockzone" parent="." index="16" instance=ExtResource("9_mfwy6")]
 position = Vector2(742, 821)
+
+[node name="HangingAlly" parent="." index="19" instance=ExtResource("11_5k1tq")]
+position = Vector2(1900, 850)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cfw8ov2cfsejt"]
+[gd_scene load_steps=17 format=3 uid="uid://cfw8ov2cfsejt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k6i68"]
 [ext_resource type="Texture2D" uid="uid://cppfa8m2dfeyx" path="res://Hero Knight/Sprites/HeroKnight/HeroKnightNoWeapons.png" id="3_xrbb4"]
@@ -119,6 +119,22 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_1umj8"]
+resource_name = "death"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [45, 46, 47]
+}
+
 [sub_resource type="Animation" id="Animation_xkvk4"]
 resource_name = "fall"
 length = 0.4
@@ -190,6 +206,7 @@ _data = {
 "RESET": SubResource("Animation_aen5x"),
 "attack1": SubResource("Animation_nelqg"),
 "block": SubResource("Animation_ttvby"),
+"death": SubResource("Animation_1umj8"),
 "fall": SubResource("Animation_xkvk4"),
 "idle": SubResource("Animation_j4g2d"),
 "jump": SubResource("Animation_r42tc"),

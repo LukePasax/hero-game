@@ -16,6 +16,7 @@ func _on_body_entered(body):
 		if died:
 			queue_free()
 		else:
+			get_parent().log("Player countered fireball")
 			direction = (shooter.global_position - global_position).normalized()
 			seeking = true
 	elif body is Boss:

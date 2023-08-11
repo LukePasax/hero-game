@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://mvhlyc0vp7bd"]
+
+[ext_resource type="FontFile" uid="uid://bi4fjlosgsqos" path="res://resources/Fonts/hf-free-complete/compass-pro-v1.1/CompassPro.otf" id="1_kya46"]
+
+[resource]
+default_font = ExtResource("1_kya46")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cpqs8w2ewwsfj"]
 
-[ext_resource type="PackedScene" uid="uid://drped4vm1u8ns" path="res://main.tscn" id="1_qdoye"]
+[ext_resource type="PackedScene" uid="uid://cgvjoexp074r" path="res://main.tscn" id="1_qdoye"]
 [ext_resource type="Texture2D" uid="uid://bd7eprmdmyepb" path="res://resources/Levels/oak_woods_v1.0/oak_woods_tileset.png" id="2_oxd0a"]
 [ext_resource type="Texture2D" uid="uid://icgjuaepmo5g" path="res://resources/Levels/castle.png" id="3_1xvbn"]
 [ext_resource type="PackedScene" uid="uid://dbcxs61j1n4vp" path="res://src/enemies/flying_enemy.tscn" id="4_mfyal"]

@@ -23,6 +23,7 @@ func die():
 	sprite.play("death")
 	movement_speed = 0
 	hitbox.set_deferred("disabled", true)
+	get_parent().log("Enemy slain")
 
 # When the death animation finishes playing, delete the enemy
 func attack_finished():

@@ -45,11 +45,13 @@ func load_texture():
 # Called when the player picks up the sword
 func pick_up_sword():
 	Events.sword = true
+	get_parent().log("picked up sword")
 	load_texture()
 
 # Called when the player picks up the shield
 func pick_up_shield():
 	Events.shield = true
+	get_parent().log("picked up shield")
 	load_texture()
 
 # A function to vibrate the controller
@@ -60,7 +62,11 @@ func vibrate():
 func die():
 	vibrate()
 	hit_sound.play()
+	get_parent().log("died")
 	Events.emit_signal("player_died")
+
+func death_animation():
+	animation_player.play("death")
 
 # Called when the player is hit by a projectile
 func hit():
@@ -119,17 +125,18 @@ func _process(delta):
 			jump_sound.play()
 			velocity.y = -jump_impulse
 			animation_player.play("jump")
+			get_parent().log("jump")
 		# If the player presses one of the combo buttons, calls ComboChecker and eventually play the animation
 		elif Input.is_action_just_pressed("combo_button_1") and Events.sword:
 			var combo = combo_checker.press_key("combo1")
 			if (combo != ""):
-				#get_parent().log(combo)
+				get_parent().log(combo)
 				play_unblockable(combo)
 				holding = false
 		elif Input.is_action_just_pressed("combo_button_2") and Events.shield:
 			var combo = combo_checker.press_key("combo2")
 			if (combo != ""):
-				#get_parent().log(combo)
+				get_parent().log(combo)
 				play_unblockable(combo)
 		# If the player is standing still, play the idle animation
 		elif velocity.x == 0:

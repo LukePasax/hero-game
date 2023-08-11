@@ -11,6 +11,8 @@ enum states {IDLE, MOVE, ATTACK, CAST, HURT, DEATH}
 @onready var attack_timer = $AttackTimer
 @onready var cast_timer = $CastTimer
 @onready var cast_spawn = $CastSpawn
+@onready var hit_pivot = $HitPivot
+@onready var smoke = $Smoke
 var fireball = preload("res://src/enemies/fireball.tscn")
 
 var movement_speed = 25
@@ -19,18 +21,23 @@ var direction
 var hp
 # The initial spawn point
 var spawn_point
+var cast_point
 
 @export var state: states = states.IDLE
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("Boss ready")
+	smoke.set_deferred("visible", false)
 	spawn_point = global_position
+	cast_point = get_parent().get_node("CastPoint").global_position
 	Events.connect("trigger_boss", start)
 	Events.connect("player_died", setup)
 	setup()
 
 # Called to reset the boss
 func setup():
+	print("Boss setup")
 	attack_timer.stop()
 	cast_timer.stop()
 	hitbox.set_deferred("disabled", true)
@@ -58,7 +65,7 @@ func _on_cast_timer_timeout():
 # Called to shoot a fireball at the player
 func cast():
 	var fb = fireball.instantiate()
-	fb.set_enemy(hurtbox)
+	fb.set_enemy(hit_pivot)
 	fb.global_position = cast_spawn.global_position
 	get_tree().get_root().add_child(fb)
 
@@ -68,9 +75,15 @@ func die():
 	hp -= 1
 	health_bar.value = hp
 	if hp == 0:
+		attack_timer.stop()
+		cast_timer.stop()
 		state = states.DEATH
 		animation.play("death")
+		get_parent().log("Boss died")
+		Events.emit_signal("boss_died")
 	else:
+		attack_timer.stop()
+		cast_timer.stop()
 		state = states.HURT
 		animation.play("hurt")
 
@@ -79,14 +92,14 @@ func invert_dir():
 
 # Called to change the boss's phase
 func change_phase():
-	attack_timer.stop()
-	cast_timer.stop()
 	if hp % 2 == 0:
-		state = states.MOVE
 		attack_timer.start()
+		animation.play("teleport_to_move")
+		global_position = spawn_point
 	else:
-		state = states.IDLE
 		cast_timer.start()
+		animation.play("teleport_to_cast")
+		global_position = cast_point
 
 func idle_state():
 	animation.play("idle")
@@ -116,4 +129,4 @@ func _process(delta):
 		states.IDLE: idle_state()
 		states.MOVE: move_state()
 		states.ATTACK: attack_state()
-		states.CAST: cast_state() 
+		states.CAST: cast_state()
