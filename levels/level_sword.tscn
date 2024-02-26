@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://coed58md2avfd"]
+[gd_scene load_steps=20 format=3 uid="uid://coed58md2avfd"]
 
 [ext_resource type="PackedScene" uid="uid://cgvjoexp074r" path="res://main.tscn" id="1_sacgf"]
 [ext_resource type="Texture2D" uid="uid://bd7eprmdmyepb" path="res://resources/Levels/oak_woods_v1.0/oak_woods_tileset.png" id="2_2vt47"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://df8x311d1dlu3" path="res://src/elements/blockzone.tscn" id="9_mfwy6"]
 [ext_resource type="PackedScene" path="res://src/elements/sword.tscn" id="9_uu30o"]
 [ext_resource type="PackedScene" uid="uid://brhxv3orricnm" path="res://src/elements/hanging_ally.tscn" id="11_5k1tq"]
+[ext_resource type="PackedScene" uid="uid://6sbbr2hd7dkn" path="res://src/elements/custom_font_label.tscn" id="12_5j0di"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s20wa"]
 size = Vector2(6978, 422)
@@ -1296,3 +1297,10 @@ position = Vector2(742, 821)
 
 [node name="HangingAlly" parent="." index="19" instance=ExtResource("11_5k1tq")]
 position = Vector2(1900, 850)
+
+[node name="CustomFontLabel" parent="." index="20" instance=ExtResource("12_5j0di")]
+offset_left = 509.0
+offset_top = 755.0
+offset_right = 721.0
+offset_bottom = 827.0
+text = "With your sword equipped, press B A A in rapid succesion to perform an attack"

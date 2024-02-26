@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ips5hn30urth"]
+[gd_scene load_steps=20 format=3 uid="uid://ips5hn30urth"]
 
 [ext_resource type="PackedScene" uid="uid://cgvjoexp074r" path="res://main.tscn" id="1_qmhm4"]
 [ext_resource type="PackedScene" uid="uid://12lmwy38utnt" path="res://src/enemies/hitbox.tscn" id="2_6eleh"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://btni1vffg33o8" path="res://src/elements/checkpoint.tscn" id="6_3ruar"]
 [ext_resource type="PackedScene" uid="uid://b22g6iavumdgp" path="res://src/elements/door.tscn" id="8_3qvcv"]
 [ext_resource type="PackedScene" uid="uid://b3b43gxvrvwld" path="res://src/enemies/fire.tscn" id="8_4i6yj"]
+[ext_resource type="PackedScene" uid="uid://6sbbr2hd7dkn" path="res://src/elements/custom_font_label.tscn" id="9_clv3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3vwf"]
 size = Vector2(6978, 422)
@@ -1333,3 +1334,24 @@ position = Vector2(3271, 832)
 
 [node name="Fire2" parent="." index="15" instance=ExtResource("8_4i6yj")]
 position = Vector2(3943, 832)
+
+[node name="CustomFontLabel" parent="." index="18" instance=ExtResource("9_clv3e")]
+offset_left = 523.0
+offset_top = 766.0
+offset_right = 681.0
+offset_bottom = 814.0
+text = "Defeat the Dark Lord and save the castle!"
+
+[node name="CustomFontLabel2" parent="." index="19" instance=ExtResource("9_clv3e")]
+offset_left = 1090.0
+offset_top = 744.0
+offset_right = 1248.0
+offset_bottom = 792.0
+text = "Press A to jump, hold it to jump further"
+
+[node name="CustomFontLabel3" parent="." index="20" instance=ExtResource("9_clv3e")]
+offset_left = 4304.0
+offset_top = 711.0
+offset_right = 4557.0
+offset_bottom = 755.0
+text = "Recover your equipment! Choose your path and press Y to enter a door"

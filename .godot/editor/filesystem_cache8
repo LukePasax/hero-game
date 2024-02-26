@@ -170,11 +170,11 @@ HeroKnight_Slide_1.png::CompressedTexture2D::568920356324334893::1708950742::170
 HeroKnight_Slide_2.png::CompressedTexture2D::8395175443395252218::1708950742::1708950742::1::::<><>::
 HeroKnight_Slide_3.png::CompressedTexture2D::5722885157455980946::1708950742::1708950742::1::::<><>::
 HeroKnight_Slide_4.png::CompressedTexture2D::8050705190542593162::1708950742::1708950742::1::::<><>::
-::res://levels/::1708953365
+::res://levels/::1708953394
 level_1.tscn::PackedScene::593623284154414017::1708953365::0::1::::<><>::uid://cgvjoexp074r<>uid://12lmwy38utnt<>uid://bd7eprmdmyepb<>uid://rjflql46btnx<>uid://icgjuaepmo5g<>uid://btni1vffg33o8<>uid://b22g6iavumdgp<>uid://b3b43gxvrvwld
 level_final.tscn::PackedScene::2402442478335732805::1708952592::0::1::::<><>::uid://cgvjoexp074r<>uid://bd7eprmdmyepb<>uid://icgjuaepmo5g<>uid://b3b43gxvrvwld<>uid://b8r2q5ec7v7ne<>uid://dbcxs61j1n4vp<>uid://btni1vffg33o8<>uid://kxy1mb7ssmsh<>uid://bwbx0av5gomfw<>uid://12lmwy38utnt
 level_shield.tscn::PackedScene::5859857100525751371::1708952434::0::1::::<><>::uid://cgvjoexp074r<>uid://bd7eprmdmyepb<>uid://icgjuaepmo5g<>uid://dbcxs61j1n4vp<>uid://b3b43gxvrvwld<>uid://12lmwy38utnt<>uid://btni1vffg33o8<>uid://b22g6iavumdgp<>res://src/elements/shield.tscn
-level_sword.tscn::PackedScene::5763980166110960401::1708953365::0::1::::<><>::uid://cgvjoexp074r<>uid://bd7eprmdmyepb<>uid://12lmwy38utnt<>uid://icgjuaepmo5g<>uid://b8r2q5ec7v7ne<>uid://rjflql46btnx<>uid://btni1vffg33o8<>uid://b22g6iavumdgp<>uid://df8x311d1dlu3<>res://src/elements/sword.tscn<>uid://brhxv3orricnm
+level_sword.tscn::PackedScene::5763980166110960401::1708953394::0::1::::<><>::uid://cgvjoexp074r<>uid://bd7eprmdmyepb<>uid://12lmwy38utnt<>uid://icgjuaepmo5g<>uid://b8r2q5ec7v7ne<>uid://rjflql46btnx<>uid://btni1vffg33o8<>uid://b22g6iavumdgp<>uid://df8x311d1dlu3<>res://src/elements/sword.tscn<>uid://brhxv3orricnm
 ::res://resources/::1708951213
 GUI.png::CompressedTexture2D::900063233893377060::1708950743::1708951213::1::::<><>::
 ::res://resources/Enemies/::1708950743
@@ -760,7 +760,7 @@ Ambient 9.wav::AudioStreamWAV::8011977873697693783::1708950744::1708951214::1:::
 hitHurt.wav::AudioStreamWAV::7138154368633139112::1708950744::1708951213::1::::<><>::
 jump.wav::AudioStreamWAV::9121823417665051309::1708950744::1708951213::1::::<><>::
 ::res://src/::1708950744
-::res://src/elements/::1708953365
+::res://src/elements/::1708953392
 blockzone.gd::GDScript::-1::1708950744::0::1::::<>Area2D<>::
 blockzone.tscn::PackedScene::7579778634159604360::1708951247::0::1::::<><>::res://src/elements/blockzone.gd
 boss_trigger.gd::GDScript::-1::1708950744::0::1::::<>Area2D<>::
@@ -770,7 +770,7 @@ checkpoint.tscn::PackedScene::3747378901152856077::1708950744::0::1::::<><>::res
 door.gd::GDScript::-1::1708952841::0::1::::<>Area2D<>::
 door.tscn::PackedScene::4337677744015387047::1708951247::0::1::::<><>::res://src/elements/door.gd<>uid://dgk6r2xyn7y4h
 hanging_ally.gd::GDScript::-1::1708953311::0::1::::<>Node2D<>::
-hanging_ally.tscn::PackedScene::3595517155400204478::1708953365::0::1::::<><>::uid://cv746vcncpbrj<>res://src/elements/hanging_ally.gd<>uid://6sbbr2hd7dkn<>uid://cppfa8m2dfeyx
+hanging_ally.tscn::PackedScene::3595517155400204478::1708953392::0::1::::<><>::uid://cv746vcncpbrj<>res://src/elements/hanging_ally.gd<>uid://6sbbr2hd7dkn<>uid://cppfa8m2dfeyx
 moving_platform.tscn::PackedScene::1212113829055441013::1708950744::0::1::::<><>::uid://icgjuaepmo5g
 custom_font_label.tscn::PackedScene::2213076390068741437::1708953365::0::1::::<><>::uid://mvhlyc0vp7bd
 shield.gd::GDScript::-1::1708950744::0::1::::<>Area2D<>::

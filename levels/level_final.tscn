@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bah042ms13rjp"]
+[gd_scene load_steps=17 format=3 uid="uid://bah042ms13rjp"]
 
 [ext_resource type="PackedScene" uid="uid://cgvjoexp074r" path="res://main.tscn" id="1_cemk1"]
 [ext_resource type="Texture2D" uid="uid://bd7eprmdmyepb" path="res://resources/Levels/oak_woods_v1.0/oak_woods_tileset.png" id="2_7psbe"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://kxy1mb7ssmsh" path="res://src/elements/boss_trigger.tscn" id="8_mighw"]
 [ext_resource type="PackedScene" uid="uid://bwbx0av5gomfw" path="res://src/enemies/boss.tscn" id="9_va5sn"]
 [ext_resource type="PackedScene" uid="uid://12lmwy38utnt" path="res://src/enemies/hitbox.tscn" id="10_t5iyw"]
+[ext_resource type="PackedScene" uid="uid://6sbbr2hd7dkn" path="res://src/elements/custom_font_label.tscn" id="11_7tluu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f8h6k"]
 texture = ExtResource("2_7psbe")
@@ -1273,3 +1274,10 @@ shape = SubResource("RectangleShape2D_qverm")
 
 [node name="CastPoint" type="Node2D" parent="." index="24"]
 position = Vector2(4521, 693)
+
+[node name="CustomFontLabel" parent="." index="25" instance=ExtResource("11_7tluu")]
+offset_left = 548.0
+offset_top = 786.0
+offset_right = 723.0
+offset_bottom = 835.0
+text = "The Dark Lord is close! Use what you learned to defeat him!"
