@@ -127,15 +127,15 @@ func _process(delta):
 			animation_player.play("jump")
 			get_parent().log("jump")
 		# If the player presses one of the combo buttons, calls ComboChecker and eventually play the animation
-		elif Input.is_action_just_pressed("combo_button_1") and Events.sword:
+		elif Input.is_action_just_pressed("combo_button_1"):
 			var combo = combo_checker.press_key("combo1")
-			if (combo != ""):
+			if (combo != "") and Events.sword:
 				get_parent().log(combo)
 				play_unblockable(combo)
 				holding = false
-		elif Input.is_action_just_pressed("combo_button_2") and Events.shield:
+		elif Input.is_action_just_pressed("combo_button_2"):
 			var combo = combo_checker.press_key("combo2")
-			if (combo != ""):
+			if (combo != "") and Events.shield:
 				get_parent().log(combo)
 				play_unblockable(combo)
 		# If the player is standing still, play the idle animation

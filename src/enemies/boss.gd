@@ -67,7 +67,7 @@ func cast():
 	var fb = fireball.instantiate()
 	fb.set_enemy(hit_pivot)
 	fb.global_position = cast_spawn.global_position
-	get_tree().get_root().add_child(fb)
+	get_parent().add_child(fb)
 
 
 # Called when the boss is hit. if the boss is hit an hp amount of times, it dies

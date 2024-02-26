@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://ips5hn30urth"]
 
-[ext_resource type="PackedScene" uid="uid://drped4vm1u8ns" path="res://main.tscn" id="1_qmhm4"]
+[ext_resource type="PackedScene" uid="uid://cgvjoexp074r" path="res://main.tscn" id="1_qmhm4"]
 [ext_resource type="PackedScene" uid="uid://12lmwy38utnt" path="res://src/enemies/hitbox.tscn" id="2_6eleh"]
 [ext_resource type="Texture2D" uid="uid://bd7eprmdmyepb" path="res://resources/Levels/oak_woods_v1.0/oak_woods_tileset.png" id="2_wsun1"]
 [ext_resource type="PackedScene" uid="uid://rjflql46btnx" path="res://src/elements/moving_platform.tscn" id="3_2g135"]

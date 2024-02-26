@@ -28,10 +28,11 @@ func _on_animated_sprite_2d_animation_finished():
 		var fb = fireball.instantiate()
 		fb.set_enemy(enemy)
 		fb.global_position = enemy.global_position
-		get_tree().get_root().add_child(fb)
+		get_parent().add_child(fb)
 		state = MOVE
 		timer.start()
 	elif sprite.animation == "death":
+		get_parent().log("Enemy slain")
 		queue_free()
 
 func move_state():
@@ -44,7 +45,6 @@ func attack_state():
 
 func dying_state():
 	animation.pause()
-	get_parent().log("Enemy slain")
 	sprite.play("death")
 
 func _on_hitbox_area_entered(area):
