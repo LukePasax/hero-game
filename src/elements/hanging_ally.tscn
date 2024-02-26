@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://brhxv3orricnm"]
 
 [ext_resource type="Texture2D" uid="uid://cv746vcncpbrj" path="res://Hero Knight/Sprites/HeroKnight/LedgeGrab/HeroKnight_Grab Ledge_4.png" id="1_rs7mk"]
-[ext_resource type="Theme" uid="uid://mvhlyc0vp7bd" path="res://resources/Fonts/new_theme.tres" id="2_1urad"]
 [ext_resource type="Script" path="res://src/elements/hanging_ally.gd" id="2_oow5s"]
+[ext_resource type="PackedScene" uid="uid://6sbbr2hd7dkn" path="res://src/elements/custom_font_label.tscn" id="4_0dfvd"]
 [ext_resource type="Texture2D" uid="uid://cppfa8m2dfeyx" path="res://Hero Knight/Sprites/HeroKnight/HeroKnightNoWeapons.png" id="4_ooh8x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h42hq"]
@@ -23,18 +23,6 @@ collision_mask = 2
 position = Vector2(-49, -59)
 shape = SubResource("RectangleShape2D_h42hq")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-offset_left = -125.0
-offset_top = -83.0
-offset_right = 85.0
-offset_bottom = -60.0
-theme = ExtResource("2_1urad")
-text = "Press X to save this soldier!"
-fit_content = true
-scroll_active = false
-autowrap_mode = 1
-
 [node name="PlayerCheck" type="RayCast2D" parent="."]
 position = Vector2(-16, -43)
 target_position = Vector2(-68, 0)
@@ -47,5 +35,12 @@ texture = ExtResource("4_ooh8x")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(28, 6, 47, 57)
+
+[node name="CustomFontLabel" parent="." instance=ExtResource("4_0dfvd")]
+offset_left = -86.0
+offset_top = -98.0
+offset_right = 3.0
+offset_bottom = -42.0
+text = "Press Y to save this soldier!"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

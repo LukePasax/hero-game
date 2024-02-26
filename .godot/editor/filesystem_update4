@@ -16,3 +16,7 @@ res://Events.gd
 res://src/enemies/flying_enemy.gd
 res://levels/level_1.tscn
 res://src/enemies/boss.gd
+res://src/elements/hanging_ally.tscn
+res://src/elements/door.gd
+res://src/elements/hanging_ally.gd
+res://src/elements/custom_font_label.tscn

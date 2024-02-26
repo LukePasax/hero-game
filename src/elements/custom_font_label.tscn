@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://6sbbr2hd7dkn"]
+
+[ext_resource type="Theme" uid="uid://mvhlyc0vp7bd" path="res://resources/Fonts/new_theme.tres" id="1_6qfa5"]
+
+[node name="CustomFontLabel" type="RichTextLabel"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_6qfa5")

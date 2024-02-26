@@ -45,5 +45,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if player_check.is_colliding() and Input.is_action_just_pressed("ui_accept"):
+	if player_check.is_colliding() and Input.is_action_just_pressed("interact"):
 		get_tree().change_scene_to_file(dest)

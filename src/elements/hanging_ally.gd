@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var label = $RichTextLabel
+@onready var label = $CustomFontLabel
 @onready var check = $PlayerCheck
 @onready var saved = $SavedAlly
 @onready var hanging = $HangingAlly
@@ -13,7 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if check.is_colliding() and Input.is_action_just_pressed("ui_accept"):
+	if check.is_colliding() and Input.is_action_just_pressed("interact"):
 		label.text = "Thank You!"
 		saved.set_deferred("visible", true)
 		hanging.set_deferred("visible", false)

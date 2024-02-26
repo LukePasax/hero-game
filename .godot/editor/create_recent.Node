@@ -1,7 +1,7 @@
+RichTextLabel
 Sprite2D
 Node2D
 RayCast2D
-RichTextLabel
 CollisionShape2D
 Area2D
 AudioStreamPlayer
