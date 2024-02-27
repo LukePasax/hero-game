@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://coed58md2avfd"]
+[gd_scene load_steps=21 format=3 uid="uid://coed58md2avfd"]
 
 [ext_resource type="PackedScene" uid="uid://cgvjoexp074r" path="res://main.tscn" id="1_sacgf"]
 [ext_resource type="Texture2D" uid="uid://bd7eprmdmyepb" path="res://resources/Levels/oak_woods_v1.0/oak_woods_tileset.png" id="2_2vt47"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" path="res://src/elements/sword.tscn" id="9_uu30o"]
 [ext_resource type="PackedScene" uid="uid://brhxv3orricnm" path="res://src/elements/hanging_ally.tscn" id="11_5k1tq"]
 [ext_resource type="PackedScene" uid="uid://6sbbr2hd7dkn" path="res://src/elements/custom_font_label.tscn" id="12_5j0di"]
+[ext_resource type="PackedScene" uid="uid://deiq1n0uwtmrf" path="res://src/enemies/blocking_enemy.tscn" id="13_5d5f3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s20wa"]
 size = Vector2(6978, 422)
@@ -1245,7 +1246,7 @@ position = Vector2(3443, 1419)
 shape = SubResource("RectangleShape2D_s20wa")
 
 [node name="Player" parent="." index="1"]
-position = Vector2(519, 838)
+position = Vector2(508, 839)
 
 [node name="TileMap" type="TileMap" parent="." index="5"]
 z_index = -1
@@ -1262,7 +1263,7 @@ position = Vector2(1069, 871)
 position = Vector2(1578, 807)
 
 [node name="WalkingEnemy3" parent="." index="8" instance=ExtResource("4_jwhwq")]
-position = Vector2(2459, 807)
+position = Vector2(2663, 809)
 
 [node name="MovingPlatform" parent="." index="9" instance=ExtResource("5_i65y6")]
 position = Vector2(2295, 843)
@@ -1293,14 +1294,23 @@ level = "Generate"
 position = Vector2(607, 847)
 
 [node name="Blockzone" parent="." index="16" instance=ExtResource("9_mfwy6")]
-position = Vector2(742, 821)
+position = Vector2(705, 879)
 
-[node name="HangingAlly" parent="." index="19" instance=ExtResource("11_5k1tq")]
-position = Vector2(1900, 850)
+[node name="Blockzone2" parent="." index="17" instance=ExtResource("9_mfwy6")]
+position = Vector2(2496, 847)
 
-[node name="CustomFontLabel" parent="." index="20" instance=ExtResource("12_5j0di")]
+[node name="Blockzone3" parent="." index="18" instance=ExtResource("9_mfwy6")]
+position = Vector2(3018, 878)
+
+[node name="HangingAlly" parent="." index="21" instance=ExtResource("11_5k1tq")]
+position = Vector2(1900, 852)
+
+[node name="CustomFontLabel" parent="." index="22" instance=ExtResource("12_5j0di")]
 offset_left = 509.0
 offset_top = 755.0
 offset_right = 721.0
 offset_bottom = 827.0
 text = "With your sword equipped, press B A A in rapid succesion to perform an attack"
+
+[node name="BlockingEnemy" parent="." index="23" instance=ExtResource("13_5d5f3")]
+position = Vector2(3064, 838)

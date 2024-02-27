@@ -90,6 +90,12 @@ func hold():
 	animation_player.play("idle")
 	holding = true
 
+func is_holding():
+	return holding
+
+func free_from_hold():
+	holding = false
+
 # A function that plays an unblockable animation
 func play_unblockable(animation):
 	animation_player.play(animation)
@@ -99,6 +105,10 @@ func play_unblockable(animation):
 func _on_sword_body_entered(body):
 	if body.is_in_group("Enemy"):
 		body.die()
+
+func _on_sword_area_entered(area):
+	if area.is_in_group("Enemy"):
+		area.die()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -132,7 +142,6 @@ func _process(delta):
 			if (combo != "") and Events.sword:
 				get_parent().log(combo)
 				play_unblockable(combo)
-				holding = false
 		elif Input.is_action_just_pressed("combo_button_2"):
 			var combo = combo_checker.press_key("combo2")
 			if (combo != "") and Events.shield:
@@ -158,3 +167,4 @@ func _process(delta):
 	# Move the character
 	if !unblockable and !holding:
 		move_and_slide()
+

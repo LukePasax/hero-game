@@ -213,8 +213,8 @@ collision_layer = 2
 script = ExtResource("1_htjek")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_flwbg")
-hframes = 8
+texture = ExtResource("3_r8s3b")
+hframes = 4
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

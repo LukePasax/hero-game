@@ -257,4 +257,5 @@ stream = ExtResource("4_i1n07")
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_kjb1p")
 
+[connection signal="area_entered" from="Sprite2D/Sword" to="." method="_on_sword_area_entered"]
 [connection signal="body_entered" from="Sprite2D/Sword" to="." method="_on_sword_body_entered"]

@@ -25,7 +25,7 @@ func die():
 	hitbox.set_deferred("disabled", true)
 	get_parent().log("Enemy slain")
 
-# When the death animation finishes playing, delete the enemy
+
 func attack_finished():
 	if facing:
 		facing = false
