@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://be5p7tgmcbcqp"]
+
+[ext_resource type="Texture2D" uid="uid://dfvhrq3bahs6f" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_1.png" id="1_i1cb0"]
+[ext_resource type="Texture2D" uid="uid://byswgrfy6a6l0" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_2.png" id="2_u2yu3"]
+[ext_resource type="Texture2D" uid="uid://cx580q3dqlhcj" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_3.png" id="3_g83em"]
+[ext_resource type="Texture2D" uid="uid://xpemn53xm8hc" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_4.png" id="4_xqt6w"]
+[ext_resource type="Texture2D" uid="uid://cq0r2kohclyqn" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_5.png" id="5_sm6di"]
+[ext_resource type="Texture2D" uid="uid://b1rf0t0xss56s" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_6.png" id="6_gnfvn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sieok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i1cb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u2yu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g83em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xqt6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sm6di")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gnfvn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CandelabrumTall" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_sieok")
+autoplay = "default"
+frame_progress = 0.933555

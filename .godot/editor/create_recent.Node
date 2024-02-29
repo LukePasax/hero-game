@@ -1,3 +1,4 @@
+AnimatedSprite2D
 AnimationPlayer
 Sprite2D
 RayCast2D
@@ -11,7 +12,6 @@ AudioStreamPlayer2D
 TextureProgressBar
 ProgressBar
 Timer
-AnimatedSprite2D
 ColorRect
 TileMap
 AnimatableBody2D

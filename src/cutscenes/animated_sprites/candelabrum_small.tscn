@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2t5wwt2347ad"]
+
+[ext_resource type="Texture2D" uid="uid://diducalmh4k37" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_small/candelabrum_small_1.png" id="1_kkj1i"]
+[ext_resource type="Texture2D" uid="uid://c1b82nbpalkmu" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_small/candelabrum_small_2.png" id="2_gjh1k"]
+[ext_resource type="Texture2D" uid="uid://mu8ktegbn131" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_small/candelabrum_small_3.png" id="3_tsyra"]
+[ext_resource type="Texture2D" uid="uid://barccqhgsqmvu" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_small/candelabrum_small_4.png" id="4_h3etw"]
+[ext_resource type="Texture2D" uid="uid://dlc4gy7d1y6fd" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_small/candelabrum_small_5.png" id="5_k1olv"]
+[ext_resource type="Texture2D" uid="uid://pquunfgtyaic" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_small/candelabrum_small_6.png" id="6_35dtd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ht46j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kkj1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gjh1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tsyra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h3etw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k1olv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_35dtd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CandelabrumSmall" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ht46j")
+autoplay = "default"
+frame_progress = 0.233439

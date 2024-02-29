@@ -767,7 +767,10 @@ Ambient 9.wav::AudioStreamWAV::8011977873697693783::1708950744::1708951214::1:::
 hitHurt.wav::AudioStreamWAV::7138154368633139112::1708950744::1708951213::1::::<><>::
 jump.wav::AudioStreamWAV::9121823417665051309::1708950744::1708951213::1::::<><>::
 ::res://src/::1709211715
-::res://src/cutscenes/::1709211715
+::res://src/cutscenes/::1709216036
+knight_with_weapons.tscn::PackedScene::8346926511119721627::1709212303::0::1::::<><>::uid://bo511fu0bpb6u
+hero_knight.tscn::PackedScene::6237746287571576232::1709212350::0::1::::<><>::uid://cppfa8m2dfeyx
+::res://src/cutscenes/animated_sprites/::1709216036
 ::res://src/elements/::1709050180
 blockzone.gd::GDScript::-1::1709048781::0::1::::<>Area2D<>::
 blockzone.tscn::PackedScene::7579778634159604360::1709050180::0::1::::<><>::res://src/elements/blockzone.gd<>uid://dcvewrrqpn6ht

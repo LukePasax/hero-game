@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://e3tp2e1wuik0"]
+
+[ext_resource type="Texture2D" uid="uid://bosxgqkgxvldr" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big/torch_big_1.png" id="1_dcb6c"]
+[ext_resource type="Texture2D" uid="uid://blgytm3ishoee" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big/torch_big_2.png" id="2_7ff4f"]
+[ext_resource type="Texture2D" uid="uid://coq8tpxwvtme6" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big/torch_big_3.png" id="3_qy1tq"]
+[ext_resource type="Texture2D" uid="uid://bth3h6kbblrgx" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big/torch_big_4.png" id="4_o8pto"]
+[ext_resource type="Texture2D" uid="uid://be1e06o0knhld" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big/torch_big_5.png" id="5_pmqyt"]
+[ext_resource type="Texture2D" uid="uid://xuxk4xhp7dog" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big/torch_big_6.png" id="6_knvuu"]
+[ext_resource type="Texture2D" uid="uid://bohv4e3qk4ris" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big/torch_big_background.png" id="7_tpcpi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n288a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dcb6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7ff4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qy1tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o8pto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pmqyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_knvuu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="TorchBig" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_n288a")
+frame_progress = 0.662572
+
+[node name="TorchBigBackground" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 11)
+texture = ExtResource("7_tpcpi")

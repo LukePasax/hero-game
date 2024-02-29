@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://ojwvrduikqf"]
+
+[ext_resource type="Texture2D" uid="uid://boc0tjntof65m" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_3/candle_blue_3_1.png" id="1_o403q"]
+[ext_resource type="Texture2D" uid="uid://cujhvyxlqros2" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_3/candle_blue_3_2.png" id="2_xrd64"]
+[ext_resource type="Texture2D" uid="uid://dfx4ijunbbm5c" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_3/candle_blue_3_3.png" id="3_l1t7a"]
+[ext_resource type="Texture2D" uid="uid://csjky6jg33v17" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_3/candle_blue_3_4.png" id="4_urdf2"]
+[ext_resource type="Texture2D" uid="uid://df4gs3sw632ql" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_3/candle_blue_3_5.png" id="5_oi67p"]
+[ext_resource type="Texture2D" uid="uid://bbymhw7rxwb21" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_3/candle_blue_3_6.png" id="6_rdj3c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3ph0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o403q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xrd64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l1t7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_urdf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oi67p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rdj3c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CandleBlue3" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_g3ph0")
+autoplay = "default"
+frame = 5
+frame_progress = 0.342271

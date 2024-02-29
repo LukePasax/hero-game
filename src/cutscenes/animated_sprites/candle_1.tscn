@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbknitc35kgoh"]
+
+[ext_resource type="Texture2D" uid="uid://bdbcfiwvkb4hj" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_1/candle_1_1.png" id="1_1xis3"]
+[ext_resource type="Texture2D" uid="uid://vm5jv3hq6pyr" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_1/candle_1_2.png" id="2_8sufl"]
+[ext_resource type="Texture2D" uid="uid://b167y2hmkdco3" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_1/candle_1_3.png" id="3_xfk62"]
+[ext_resource type="Texture2D" uid="uid://b5a7vrynsyp8i" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_1/candle_1_4.png" id="4_q3q6w"]
+[ext_resource type="Texture2D" uid="uid://de6cx033a3urs" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_1/candle_1_5.png" id="5_14gqd"]
+[ext_resource type="Texture2D" uid="uid://dykj0q4trsypm" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_1/candle_1_6.png" id="6_4nwjo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_37k1v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1xis3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8sufl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xfk62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q3q6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_14gqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4nwjo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Candle1" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_37k1v")
+autoplay = "default"
+frame_progress = 0.987754

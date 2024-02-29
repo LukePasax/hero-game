@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxnbxtoq0eyif"]
+
+[ext_resource type="Texture2D" uid="uid://cxbo3h1v4dg7h" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big_blue/torch_big_blue_1.png" id="1_phdju"]
+[ext_resource type="Texture2D" uid="uid://dv6o3hgswr5ay" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big_blue/torch_big_blue_2.png" id="2_jn18e"]
+[ext_resource type="Texture2D" uid="uid://bkxifes8bs323" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big_blue/torch_big_blue_3.png" id="3_ksjkg"]
+[ext_resource type="Texture2D" uid="uid://cnj13a2qpboou" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big_blue/torch_big_blue_4.png" id="4_g41vn"]
+[ext_resource type="Texture2D" uid="uid://blk17p2iugvoq" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big_blue/torch_big_blue_5.png" id="5_w86ow"]
+[ext_resource type="Texture2D" uid="uid://khgy8i4hgsrt" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big_blue/torch_big_blue_6.png" id="6_8duq3"]
+[ext_resource type="Texture2D" uid="uid://cay0rh58qt1cu" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_big_blue/torch_big_blue_background.png" id="7_fnces"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2qi3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_phdju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jn18e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ksjkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g41vn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w86ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8duq3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="TorchBigBlue" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_2qi3b")
+autoplay = "default"
+
+[node name="TorchBigBlueBackground" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 11)
+texture = ExtResource("7_fnces")

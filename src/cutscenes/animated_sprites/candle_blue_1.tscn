@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbyotwp3teoqe"]
+
+[ext_resource type="Texture2D" uid="uid://lc8hi2igb5gi" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_1/candle_blue_1_1.png" id="1_4xqm0"]
+[ext_resource type="Texture2D" uid="uid://d1f6b78nrf71h" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_1/candle_blue_1_2.png" id="2_71nmg"]
+[ext_resource type="Texture2D" uid="uid://jtr7f1t5occf" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_1/candle_blue_1_3.png" id="3_lua4y"]
+[ext_resource type="Texture2D" uid="uid://dubcr3h46fucu" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_1/candle_blue_1_4.png" id="4_rs47t"]
+[ext_resource type="Texture2D" uid="uid://dn67aoacnr2c2" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_1/candle_blue_1_5.png" id="5_q8noq"]
+[ext_resource type="Texture2D" uid="uid://ptu6b6l0l0l5" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_blue_1/candle_blue_1_6.png" id="6_s8bwh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qpxbp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4xqm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_71nmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lua4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rs47t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q8noq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s8bwh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CandleBlue1" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_qpxbp")
+autoplay = "default"
+frame_progress = 0.772966
