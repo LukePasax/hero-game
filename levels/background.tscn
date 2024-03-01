@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3hq3ee0oyf63"]
+
+[ext_resource type="Texture2D" uid="uid://ci1pl3hkujdlo" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Background/layer_1.png" id="1_liiwo"]
+[ext_resource type="Texture2D" uid="uid://d1yimwra6ko8y" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Background/layer_2.png" id="2_ltacm"]
+
+[node name="Background" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Layer1" type="Sprite2D" parent="ParallaxBackground/Sky"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_liiwo")
+centered = false
+
+[node name="City" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Layer2" type="Sprite2D" parent="ParallaxBackground/City"]
+position = Vector2(1, 62)
+texture = ExtResource("2_ltacm")
+centered = false
+
+[node name="City2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Layer2" type="Sprite2D" parent="ParallaxBackground/City2"]
+position = Vector2(321, 62)
+texture = ExtResource("2_ltacm")
+centered = false
+
+[node name="City3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Layer2" type="Sprite2D" parent="ParallaxBackground/City3"]
+position = Vector2(641, 62)
+texture = ExtResource("2_ltacm")
+centered = false

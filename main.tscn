@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgvjoexp074r"]
+[gd_scene load_steps=8 format=3 uid="uid://cgvjoexp074r"]
 
 [ext_resource type="PackedScene" uid="uid://cfw8ov2cfsejt" path="res://player.tscn" id="1_dgwgk"]
 [ext_resource type="Script" path="res://main.gd" id="1_y4gjk"]
@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://dh7qwuluf6w5p" path="res://logger.tscn" id="4_ul880"]
 [ext_resource type="AudioStream" uid="uid://dmfcdtnrtocgd" path="res://resources/Music/Ambient 9.wav" id="5_3xrd1"]
 [ext_resource type="AudioStream" uid="uid://vwq8x6i6b8ve" path="res://resources/Music/Action 4 (Loop).wav" id="6_55ivi"]
+[ext_resource type="PackedScene" uid="uid://b3hq3ee0oyf63" path="res://levels/background.tscn" id="7_keeaj"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_y4gjk")
 
 [node name="Player" parent="." instance=ExtResource("1_dgwgk")]
-position = Vector2(937, 849)
+position = Vector2(155, 115)
 
 [node name="WebSocketClient" parent="." instance=ExtResource("3_18wuh")]
 
@@ -25,3 +26,5 @@ autoplay = true
 
 [node name="BossMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_55ivi")
+
+[node name="Background" parent="." instance=ExtResource("7_keeaj")]

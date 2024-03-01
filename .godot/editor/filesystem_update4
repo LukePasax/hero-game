@@ -1,14 +1,1 @@
-res://src/enemies/blocking_enemy.tscn
-res://src/enemies/blocking_enemy.gd
-res://src/enemies/walking_enemy.tscn
-res://src/enemies/walking_enemy.gd
-res://src/elements/blockzone.tscn
-res://src/elements/blockzone.gd
-res://player.tscn
-res://player.gd
 res://levels/level_1.tscn
-res://src/elements/custom_font_label.tscn
-res://levels/level_sword.tscn
-res://levels/level_shield.tscn
-res://levels/level_final.tscn
-res://Events.gd

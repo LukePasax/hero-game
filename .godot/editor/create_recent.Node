@@ -1,6 +1,8 @@
+ParallaxLayer
+ParallaxBackground
+Sprite2D
 AnimatedSprite2D
 AnimationPlayer
-Sprite2D
 RayCast2D
 CollisionShape2D
 CharacterBody2D
@@ -19,8 +21,6 @@ AnimationTree
 PathFollow2D
 Path2D
 Camera2D
-ParallaxLayer
-ParallaxBackground
 TextureRect
 Node
 StaticBody2D

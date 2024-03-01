@@ -226,7 +226,7 @@ shape = SubResource("RectangleShape2D_tmdu0")
 [node name="ComboChecker" parent="." instance=ExtResource("107_st4fu")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -256,6 +256,7 @@ stream = ExtResource("4_i1n07")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_kjb1p")
+volume_db = -10.0
 
 [connection signal="area_entered" from="Sprite2D/Sword" to="." method="_on_sword_area_entered"]
 [connection signal="body_entered" from="Sprite2D/Sword" to="." method="_on_sword_body_entered"]
