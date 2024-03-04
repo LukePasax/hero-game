@@ -1,18 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://rjflql46btnx"]
 
-[ext_resource type="Texture2D" uid="uid://icgjuaepmo5g" path="res://resources/Levels/castle.png" id="1_y14pc"]
+[ext_resource type="Texture2D" uid="uid://dvxrnpoxiyeiv" path="res://resources/Levels/castle_tilesheet.png" id="1_nju7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnmxh"]
-size = Vector2(84, 15)
+size = Vector2(64, 16)
 
 [node name="MovingPlatform" type="AnimatableBody2D"]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_qnmxh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_y14pc")
+texture = ExtResource("1_nju7a")
 region_enabled = true
-region_rect = Rect2(0.2938, 266.284, 84.7448, 16.2787)
+region_rect = Rect2(160, 271.813, 64.1042, 16.1866)
