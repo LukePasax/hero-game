@@ -9,7 +9,7 @@ var shooter
 var seeking = false
 
 
-# Called to check if the fireball hit the player, the boss, an enemy or a wall
+# Called to check if the fireball hit the player, the boss, an enemy or a wall.
 func _on_body_entered(body):
 	if body is Player:
 		var died = body.hit()
@@ -25,13 +25,14 @@ func _on_body_entered(body):
 	else:
 		queue_free()
 
-# Called to set the enemy that shot the fireball so that it can seek it
+# Called to set the enemy that shot the fireball so that it can seek it.
 func set_enemy(enemy):
 	shooter = enemy
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player_pos = get_tree().get_first_node_in_group("Player").position
+	global_position = shooter.global_position
+	player_pos = get_tree().get_first_node_in_group("Player").global_position
 	direction = (player_pos - global_position).normalized()
 
 

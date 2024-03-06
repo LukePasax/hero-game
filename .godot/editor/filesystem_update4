@@ -13,3 +13,7 @@ res://src/enemies/walking_enemy.tscn
 res://src/enemies/blocking_enemy.tscn
 res://src/enemies/walking_enemy.gd
 res://player.tscn
+res://src/enemies/flying_enemy.tscn
+res://src/enemies/flying_enemy.gd
+res://src/enemies/fireball.tscn
+res://src/enemies/fireball.gd

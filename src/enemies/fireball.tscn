@@ -49,6 +49,7 @@ _data = {
 }
 
 [node name="Fireball" type="Area2D" groups=["Fireball"]]
+z_index = 5
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_r6g12")
