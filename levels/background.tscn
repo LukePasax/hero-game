@@ -14,7 +14,7 @@ texture = ExtResource("1_liiwo")
 centered = false
 
 [node name="City" type="ParallaxLayer" parent="."]
-position = Vector2(0, 61)
+position = Vector2(-1, 108)
 motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(960, 0)
 
@@ -24,7 +24,7 @@ texture = ExtResource("2_ltacm")
 centered = false
 
 [node name="City2" type="ParallaxLayer" parent="."]
-position = Vector2(0, 61)
+position = Vector2(-1, 108)
 motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(960, 0)
 
@@ -34,7 +34,7 @@ texture = ExtResource("2_ltacm")
 centered = false
 
 [node name="City3" type="ParallaxLayer" parent="."]
-position = Vector2(0, 61)
+position = Vector2(-1, 108)
 motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(960, 0)
 

@@ -3,12 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dvxrnpoxiyeiv" path="res://resources/Levels/castle_tilesheet.png" id="1_nju7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnmxh"]
-size = Vector2(64, 16)
+size = Vector2(64, 13)
 
 [node name="MovingPlatform" type="AnimatableBody2D"]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_qnmxh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

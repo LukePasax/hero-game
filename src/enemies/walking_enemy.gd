@@ -36,9 +36,10 @@ func attack_finished():
 func attack_state():
 	var player = get_tree().get_first_node_in_group("Player")
 	if player != null:
-		if ((global_position.x < player.position.x and direction.x < 0) or (global_position.x > player.position.x and direction.x > 0)) and !facing:
+		if ((position.x < player.position.x and direction.x < 0) or (position.x > player.position.x and direction.x > 0)) and !facing:
 			scale.x *= -1
 			facing = true
+			print("fuck")
 		sprite.play("attack")
 
 func move_state():

@@ -1,7 +1,15 @@
-res://src/cutscenes/knight_room.tscn
 res://levels/level_1.tscn
 res://levels/level_final.tscn
 res://levels/level_shield.tscn
 res://levels/level_sword.tscn
+res://src/cutscenes/knight_room.tscn
 res://src/cutscenes/dark_lord.tscn
 res://src/cutscenes/hero_knight.tscn
+res://levels/background.tscn
+res://src/cutscenes/animated_sprites/torch_big.tscn
+res://src/elements/moving_platform.tscn
+res://src/elements/custom_font_label.tscn
+res://src/enemies/walking_enemy.tscn
+res://src/enemies/blocking_enemy.tscn
+res://src/enemies/walking_enemy.gd
+res://player.tscn
