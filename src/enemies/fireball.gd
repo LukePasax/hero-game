@@ -6,6 +6,7 @@ var player_pos
 var speed = 200
 var direction
 var shooter
+var spawn
 var seeking = false
 
 
@@ -29,9 +30,13 @@ func _on_body_entered(body):
 func set_enemy(enemy):
 	shooter = enemy
 
+# Called to set the spawn of the fireball
+func set_spawn(point):
+	spawn = point
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	global_position = shooter.global_position
+	global_position = spawn.global_position
 	player_pos = get_tree().get_first_node_in_group("Player").global_position
 	direction = (player_pos - global_position).normalized()
 

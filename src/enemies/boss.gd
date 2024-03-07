@@ -37,7 +37,6 @@ func _ready():
 
 # Called to reset the boss
 func setup():
-	print("Boss setup")
 	attack_timer.stop()
 	cast_timer.stop()
 	hitbox.set_deferred("disabled", true)
@@ -66,7 +65,7 @@ func _on_cast_timer_timeout():
 func cast():
 	var fb = fireball.instantiate()
 	fb.set_enemy(hit_pivot)
-	fb.global_position = cast_spawn.global_position
+	fb.set_spawn(cast_spawn)
 	get_parent().add_child(fb)
 
 

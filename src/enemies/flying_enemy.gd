@@ -27,6 +27,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if sprite.animation == "attack":
 		var fb = fireball.instantiate()
 		fb.set_enemy(enemy)
+		fb.set_spawn(enemy)
 		get_parent().add_child(fb)
 		state = MOVE
 		timer.start()
