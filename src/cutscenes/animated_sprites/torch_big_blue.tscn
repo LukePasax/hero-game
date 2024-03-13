@@ -35,10 +35,11 @@ animations = [{
 }]
 
 [node name="TorchBigBlue" type="AnimatedSprite2D"]
+position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_2qi3b")
 autoplay = "default"
 
 [node name="TorchBigBlueBackground" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(0, 11)
+position = Vector2(0.0196857, 11.4882)
 texture = ExtResource("7_fnces")
