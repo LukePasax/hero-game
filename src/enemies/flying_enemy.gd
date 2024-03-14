@@ -6,12 +6,12 @@ enum { MOVE, ATTACK, DYING }
 @onready var sprite = $PathFollow2D/Enemy/AnimatedSprite2D
 @onready var timer = $AttackTimer
 @onready var enemy = $PathFollow2D/Enemy
+@onready var sound = $FireballSound
 @onready var player = get_tree().get_first_node_in_group("Player")
 
 var fireball = preload("res://src/enemies/fireball.tscn")
 
 var state = MOVE
-
 
 # The enemy attacks every 2 seconds should the player be within 300 pixels of the enemy.
 func _on_attack_timer_timeout():
@@ -29,6 +29,7 @@ func _on_animated_sprite_2d_animation_finished():
 		fb.set_enemy(enemy)
 		fb.set_spawn(enemy)
 		get_parent().add_child(fb)
+		sound.play()
 		state = MOVE
 		timer.start()
 	elif sprite.animation == "death":

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dbcxs61j1n4vp"]
+[gd_scene load_steps=37 format=3 uid="uid://dbcxs61j1n4vp"]
 
 [ext_resource type="Script" path="res://src/enemies/flying_enemy.gd" id="1_cghvn"]
 [ext_resource type="Texture2D" uid="uid://dofpg2ecqd4m8" path="res://resources/Enemies/Flying_eye/Attack.png" id="2_j7b7f"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ciscv8mxewipp" path="res://resources/Enemies/Flying_eye/Flight.png" id="4_qfd64"]
 [ext_resource type="Texture2D" uid="uid://c7ivswe7fmfqb" path="res://resources/Enemies/Flying_eye/Take Hit.png" id="5_2dtbr"]
 [ext_resource type="PackedScene" uid="uid://12lmwy38utnt" path="res://src/enemies/hitbox.tscn" id="6_yxijt"]
+[ext_resource type="AudioStream" uid="uid://bd08ujpgrgqro" path="res://resources/Sounds/fireball-whoosh.mp3" id="7_fnlks"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hj0hy"]
 atlas = ExtResource("2_j7b7f")
@@ -250,7 +251,7 @@ rotates = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D/Enemy"]
 position = Vector2(-5, -3)
 sprite_frames = SubResource("SpriteFrames_x2emf")
-animation = &"take_hit"
+animation = &"attack"
 
 [node name="Hitbox" parent="PathFollow2D/Enemy" instance=ExtResource("6_yxijt")]
 
@@ -268,6 +269,9 @@ libraries = {
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="FireballSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_fnlks")
 
 [connection signal="animation_finished" from="PathFollow2D/Enemy/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="PathFollow2D/Enemy/Hitbox" to="." method="_on_hitbox_area_entered"]

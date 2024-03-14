@@ -7,3 +7,7 @@ res://src/cutscenes/animated_sprites/torch_big_blue.tscn
 res://src/cutscenes/animated_sprites/torch_big.tscn
 res://player.tscn
 res://src/cutscenes/dark_lord.tscn
+res://src/enemies/flying_enemy.tscn
+res://src/enemies/flying_enemy.gd
+res://Events.gd
+res://src/enemies/boss.tscn
