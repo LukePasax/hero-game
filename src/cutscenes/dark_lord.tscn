@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d24jpe1qf1obi"]
+[gd_scene load_steps=9 format=3 uid="uid://d24jpe1qf1obi"]
 
 [ext_resource type="Texture2D" uid="uid://2tgx1442h8g8" path="res://resources/Enemies/Bringer-Of-Death/SpriteSheet/Bringer-of-Death-SpritSheet.png" id="1_pgc1f"]
 [ext_resource type="Script" path="res://src/cutscenes/dark_lord.gd" id="2_pykf3"]
+[ext_resource type="AudioStream" uid="uid://bd08ujpgrgqro" path="res://resources/Sounds/fireball-whoosh.mp3" id="3_fnsuk"]
 
 [sub_resource type="Animation" id="Animation_qy306"]
 length = 0.001
@@ -32,6 +33,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [39, 40, 41, 42, 43, 44, 45, 46, 47]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_k48ff"]
@@ -88,3 +101,6 @@ autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_w2omc")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
+stream = ExtResource("3_fnsuk")

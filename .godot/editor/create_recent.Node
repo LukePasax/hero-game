@@ -1,3 +1,5 @@
+AudioStreamPlayer
+AudioStreamPlayer2D
 AnimationPlayer
 Sprite2D
 Camera2D
@@ -10,8 +12,6 @@ CharacterBody2D
 RichTextLabel
 Node2D
 Area2D
-AudioStreamPlayer
-AudioStreamPlayer2D
 TextureProgressBar
 ProgressBar
 Timer
