@@ -4,6 +4,7 @@ extends Node2D
 @onready var respawn_timer = $RespawnTimer
 @onready var ambient_music = $AmbientMusic
 @onready var boss_music = $BossMusic	
+@onready var animation = $AnimationPlayer
 var player_spawn = Vector2.ZERO
 var recording = false
 
@@ -21,6 +22,10 @@ func _on_trigger_boss():
 func _on_boss_died():
 	boss_music.stop()
 	ambient_music.play()
+	animation.play("EndGame")
+
+func to_endscreen():
+	get_tree().change_scene_to_file("res://src/cutscenes/end_screen.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

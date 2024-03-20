@@ -1,4 +1,7 @@
 res://levels/level_final.tscn
-res://src/cutscenes/knight_room.tscn
+res://main.tscn
+res://main.gd
+res://player.tscn
 res://Events.gd
-res://levels/level_shield.tscn
+res://src/elements/door.tscn
+res://src/cutscenes/end_screen.tscn
