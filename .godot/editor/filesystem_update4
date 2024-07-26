@@ -1,7 +1,2 @@
-res://levels/level_final.tscn
-res://main.tscn
-res://main.gd
 res://player.tscn
-res://Events.gd
-res://src/elements/door.tscn
-res://src/cutscenes/end_screen.tscn
+res://controller.gd
