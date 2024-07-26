@@ -41,6 +41,14 @@ func log(action):
 	if recording:
 		$Logger.log($WebSocketClient.get_recording_time(), action)
 
+# A function that return the list of checkpoints yet to be reached
+func get_active_checkpoint_list():
+	var checkpoints = []
+	for child in get_children():
+		if child.is_in_group("Checkpoint") and child.monitoring == true:
+			checkpoints.append(child)
+	return checkpoints
+
 # A function that handles a variety of inputs
 func _unhandled_input(event):
 	# Connects to the obs websocket

@@ -1,2 +1,10 @@
 res://player.tscn
+res://player.gd
 res://controller.gd
+res://levels/level_1.tscn
+res://levels/level_sword.tscn
+res://levels/level_shield.tscn
+res://levels/level_final.tscn
+res://main.gd
+res://src/elements/checkpoint.tscn
+res://script_templates/AIController/controller_template.gd

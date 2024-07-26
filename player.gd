@@ -2,18 +2,22 @@ extends CharacterBody2D
 
 class_name Player
 
+# CONSTANTS USED BY THE PLAYER
 # The acceleration of the character
-var acceleration = 50
+const ACCELERATION = 50
 # The max speed at which the character moves
-var speed = 200
+const SPEED = 200
 # The speed at which the character falls
-var gravity = 200
+const GRAVITY = 200
 # The maximum velocity with which the character jumps
-var jump_impulse = 140
+const JUMP_IMPULSE = 140
 # The minimum velocity with which the character jumps
-var min_impulse = 70
+const MIN_IMPULSE = 70
+
+
 # Used when performing unblockable animations
 var unblockable = false
+# Used when the player is holded in place
 var holding = false
 # Says if the character is blocking
 @export var blocking = false
@@ -77,13 +81,13 @@ func hit():
 		return true
 
 func apply_gravity(delta):
-	velocity.y += delta * gravity
+	velocity.y += delta * GRAVITY
 	
 func apply_friction():
-	velocity.x = move_toward(velocity.x, 0, acceleration)
+	velocity.x = move_toward(velocity.x, 0, ACCELERATION)
 
 func apply_acceleration(x):
-	velocity.x = move_toward(velocity.x, 200 * x, acceleration)
+	velocity.x = move_toward(velocity.x, 200 * x, ACCELERATION)
 
 # A function that holds the player in place
 func hold():
@@ -110,6 +114,19 @@ func _on_sword_area_entered(area):
 	if area.is_in_group("Enemy"):
 		area.die()
 
+func get_nearest_checkpoint():
+	var checkpoints = get_parent().get_active_checkpoint_list()
+	var nearest = null
+	var min_dist = INF
+	
+	for checkpoint in checkpoints:
+		var distance = position.distance_to(to_local(checkpoint.position))
+		if distance < min_dist:
+			min_dist = distance
+			nearest = checkpoint
+	
+	return nearest
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# Determine the direction by reading inputs
@@ -133,7 +150,7 @@ func _process(delta):
 		# If the player jumps, play the animation and change the y velocity
 		if Input.is_action_pressed("jump") and !holding:
 			jump_sound.play()
-			velocity.y = -jump_impulse
+			velocity.y = -JUMP_IMPULSE
 			animation_player.play("jump")
 			get_parent().log("jump")
 		# If the player presses one of the combo buttons, calls ComboChecker and eventually play the animation
@@ -153,8 +170,8 @@ func _process(delta):
 		elif !holding:
 			animation_player.play("run")
 	elif not is_on_floor():
-		if Input.is_action_just_released("jump") and velocity.y < -min_impulse:
-			velocity.y = -min_impulse
+		if Input.is_action_just_released("jump") and velocity.y < -MIN_IMPULSE:
+			velocity.y = -MIN_IMPULSE
 		# Plays the fall animation when in the air and descending
 		if velocity.y > 0:
 			# The character falls faster
