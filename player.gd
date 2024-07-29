@@ -19,8 +19,15 @@ const MIN_IMPULSE = 70
 var unblockable = false
 # Used when the player is holded in place
 var holding = false
+# The move vector of the character
+var move_vector = Vector2.ZERO
+# True if the character is on the ground
+var grounded = false
 # Says if the character is blocking
 @export var blocking = false
+ 
+var move_action = 0
+var jump_action = false
 
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
@@ -28,6 +35,7 @@ var holding = false
 @onready var combo_checker = $ComboChecker
 @onready var hit_sound = $HitSound
 @onready var jump_sound = $JumpSound
+@onready var ai_controller = $AIController2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -127,28 +135,48 @@ func get_nearest_checkpoint():
 	
 	return nearest
 
+func get_move_vector() -> Vector2:
+	if ai_controller.done:
+		return Vector2.ZERO
+
+	if ai_controller.heuristic == "model":
+		return Vector2(clamp(move_action, -1.0, 0.5),0)
+	
+	return Vector2(Input.get_axis("move_left", "move_right"), 0)
+
+func get_jump_action() -> bool:
+	if ai_controller.done:
+		jump_action = false
+		return jump_action
+
+	if ai_controller.heuristic == "model":
+		return jump_action
+
+	return Input.is_action_pressed("jump")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# Determine the direction by reading inputs
-	var direction = Vector2.ZERO
-	direction.x = Input.get_axis("move_left", "move_right")
+	move_vector = get_move_vector()
 	
 	# If the player is moving apply acceleration, otherwise friction
-	if direction.x == 0:
+	if move_vector.x == 0:
 		apply_friction()
 	else:
-		if direction.x > 0:
+		if move_vector.x > 0:
 			sprite.scale.x = 1
 		else:
 			sprite.scale.x = -1
-		apply_acceleration(direction.x)
+		apply_acceleration(move_vector.x)
 	
 	apply_gravity(delta)
 	
+	grounded = is_on_floor()
+	jump_action = get_jump_action()
+	
 	# Checks if the character is on the floor
-	if is_on_floor() and !unblockable:
+	if grounded and !unblockable:
 		# If the player jumps, play the animation and change the y velocity
-		if Input.is_action_pressed("jump") and !holding:
+		if jump_action and !holding:
 			jump_sound.play()
 			velocity.y = -JUMP_IMPULSE
 			animation_player.play("jump")
@@ -170,7 +198,7 @@ func _process(delta):
 		elif !holding:
 			animation_player.play("run")
 	elif not is_on_floor():
-		if Input.is_action_just_released("jump") and velocity.y < -MIN_IMPULSE:
+		if not jump_action and velocity.y < -MIN_IMPULSE:
 			velocity.y = -MIN_IMPULSE
 		# Plays the fall animation when in the air and descending
 		if velocity.y > 0:
