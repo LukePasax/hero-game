@@ -1,4 +1,5 @@
 AIController2D
+Sync
 NavigationAgent2D
 AnimationPlayer
 CanvasModulate
@@ -11,5 +12,3 @@ AudioStreamPlayer2D
 Sprite2D
 Camera2D
 ParallaxLayer
-ParallaxBackground
-AnimatedSprite2D

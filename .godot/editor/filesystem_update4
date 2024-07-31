@@ -8,3 +8,4 @@ res://levels/level_final.tscn
 res://main.gd
 res://src/elements/checkpoint.tscn
 res://script_templates/AIController/controller_template.gd
+res://main.tscn

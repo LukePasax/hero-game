@@ -28,6 +28,7 @@ var grounded = false
  
 var move_action = 0
 var jump_action = false
+var best_goal_distance = 10000.0
 
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
@@ -39,6 +40,7 @@ var jump_action = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	ai_controller.init(self)
 	vibrate()
 	sword_box.set_deferred("disabled", true)
 	load_texture()
@@ -153,6 +155,21 @@ func get_jump_action() -> bool:
 		return jump_action
 
 	return Input.is_action_pressed("jump")
+
+func update_reward():
+	ai_controller.reward -= 0.01 # Time Penality
+	ai_controller.reward += shaping_reward()
+
+func shaping_reward():
+	var s_reward = 0.0
+	var goal_distance = position.distance_to(get_nearest_checkpoint().position)
+	if goal_distance < best_goal_distance:
+		s_reward += best_goal_distance - goal_distance
+		best_goal_distance = goal_distance
+	
+	s_reward /= 1.0
+	return s_reward
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -8,7 +8,7 @@ func _physics_process(delta):
 func get_obs():
 	var goal = _player.get_nearest_checkpoint()
 	
-	var goal_distance = _player.position.distance_to(goal)
+	var goal_distance = _player.position.distance_to(goal.position)
 	var goal_position = goal.global_position
 	
 	var goal_vector = _player.to_local(goal_position).normalized()
@@ -37,3 +37,8 @@ func get_action_space():
 		"jump": {"size": 1, "action_type": "continuous"},
 		"move": {"size": 1, "action_type": "continuous"},
 	}
+
+func get_reward():
+	var current_reward = reward
+	reward = 0  # reset the reward to zero checked every decision step
+	return current_reward
