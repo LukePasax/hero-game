@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://brbkcx5h3yfry"]
+
+[ext_resource type="PackedScene" uid="uid://ips5hn30urth" path="res://levels/level_1.tscn" id="1_cevrl"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="2_jntyj"]
+
+[node name="Train" type="Node2D"]
+
+[node name="Level1" parent="." instance=ExtResource("1_cevrl")]
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("2_jntyj")

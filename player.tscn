@@ -259,7 +259,7 @@ stream = ExtResource("4_i1n07")
 stream = ExtResource("5_kjb1p")
 volume_db = -10.0
 
-[node name="AIController2D" type="Node2D" parent="."]
+[node name="AIController2D" type="Node2D" parent="." groups=["AGENT"]]
 script = ExtResource("6_t5qau")
 
 [connection signal="area_entered" from="Sprite2D/Sword" to="." method="_on_sword_area_entered"]

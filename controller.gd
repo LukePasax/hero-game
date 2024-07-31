@@ -32,11 +32,14 @@ func set_action(action):
 	_player.move_action = action["move"][0]
 	_player.jump_action = action["jump"][0] > 0
 
-func get_action_space():
-	return {
+func get_action_space() -> Dictionary:
+	var action_space = {
 		"jump": {"size": 1, "action_type": "continuous"},
-		"move": {"size": 1, "action_type": "continuous"},
+		"move": {"size": 1, "action_type": "continuous"}
 	}
+	print("get_action_space() called, returning: ", action_space)
+	return action_space
+
 
 func get_reward():
 	var current_reward = reward

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgvjoexp074r"]
+[gd_scene load_steps=11 format=3 uid="uid://cgvjoexp074r"]
 
 [ext_resource type="PackedScene" uid="uid://cfw8ov2cfsejt" path="res://player.tscn" id="1_dgwgk"]
 [ext_resource type="Script" path="res://main.gd" id="1_y4gjk"]
@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://dmfcdtnrtocgd" path="res://resources/Music/Ambient 9.wav" id="5_3xrd1"]
 [ext_resource type="AudioStream" uid="uid://vwq8x6i6b8ve" path="res://resources/Music/Action 4 (Loop).wav" id="6_55ivi"]
 [ext_resource type="PackedScene" uid="uid://b3hq3ee0oyf63" path="res://levels/background.tscn" id="7_keeaj"]
-[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="8_h5jsd"]
 
 [sub_resource type="Animation" id="Animation_t8c7h"]
 resource_name = "EndGame"
@@ -100,6 +99,3 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_vqhvh")
 }
-
-[node name="Sync" type="Node" parent="."]
-script = ExtResource("8_h5jsd")
