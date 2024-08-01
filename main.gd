@@ -37,7 +37,7 @@ func _ready():
 
 # A function that logs an action and the time it was performed
 func log(action):
-	print(action)
+	# print(action)
 	if recording:
 		$Logger.log($WebSocketClient.get_recording_time(), action)
 

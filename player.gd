@@ -10,9 +10,9 @@ const SPEED = 200
 # The speed at which the character falls
 const GRAVITY = 200
 # The maximum velocity with which the character jumps
-const JUMP_IMPULSE = 140
+const JUMP_IMPULSE = 200
 # The minimum velocity with which the character jumps
-const MIN_IMPULSE = 70
+const MIN_IMPULSE = 100
 
 
 # Used when performing unblockable animations
@@ -29,6 +29,9 @@ var grounded = false
 var move_action = 0
 var jump_action = false
 var best_goal_distance = 10000.0
+var current_goal = null
+var previous_goal_distance = 0.0
+var time_to_goal = 0.0
 
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
@@ -78,6 +81,9 @@ func die():
 	hit_sound.play()
 	get_parent().log("died")
 	Events.emit_signal("player_died")
+	ai_controller.reward -= 100.0
+	best_goal_distance = 10000.0
+	ai_controller.reset()
 
 func death_animation():
 	animation_player.play("death")
@@ -130,12 +136,12 @@ func get_nearest_checkpoint():
 	var min_dist = INF
 	
 	for checkpoint in checkpoints:
-		var distance = position.distance_to(to_local(checkpoint.position))
+		var distance = global_position.distance_to(to_local(checkpoint.global_position))
 		if distance < min_dist:
 			min_dist = distance
 			nearest = checkpoint
 	
-	return nearest
+	return checkpoints[0]
 
 func get_move_vector() -> Vector2:
 	if ai_controller.done:
@@ -156,23 +162,48 @@ func get_jump_action() -> bool:
 
 	return Input.is_action_pressed("jump")
 
+func calculate_approach_speed(current_distance: float) -> float:
+	var approach_speed = previous_goal_distance - current_distance
+	previous_goal_distance = current_distance
+	return approach_speed
+
+func update_time_to_goal(delta: float):
+	time_to_goal += delta
+
+func reset_time_to_goal():
+	time_to_goal = 0.0
+
 func update_reward():
 	ai_controller.reward -= 0.01 # Time Penality
 	ai_controller.reward += shaping_reward()
+	print(ai_controller.reward)
 
 func shaping_reward():
 	var s_reward = 0.0
-	var goal_distance = position.distance_to(get_nearest_checkpoint().position)
+	var next_goal = get_nearest_checkpoint()
+	
+	# Resets the best goal distance if the current goal has been reached
+	if next_goal != current_goal:
+		current_goal = next_goal
+		best_goal_distance = 10000.0
+		reset_time_to_goal()
+	
+	var goal_distance = global_position.distance_to(to_local(current_goal.global_position))
+	var approach_speed = calculate_approach_speed(goal_distance)
+	
 	if goal_distance < best_goal_distance:
 		s_reward += best_goal_distance - goal_distance
 		best_goal_distance = goal_distance
 	
+	s_reward += approach_speed * 0.1
+	s_reward -= time_to_goal * 0.01
+	
 	s_reward /= 1.0
 	return s_reward
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	update_time_to_goal(delta)
 	move_vector = get_move_vector()
 	
 	# If the player is moving apply acceleration, otherwise friction
@@ -188,12 +219,12 @@ func _process(delta):
 	apply_gravity(delta)
 	
 	grounded = is_on_floor()
-	jump_action = get_jump_action()
+	var jump = get_jump_action()
 	
 	# Checks if the character is on the floor
 	if grounded and !unblockable:
 		# If the player jumps, play the animation and change the y velocity
-		if jump_action and !holding:
+		if jump and !holding:
 			jump_sound.play()
 			velocity.y = -JUMP_IMPULSE
 			animation_player.play("jump")
@@ -214,8 +245,8 @@ func _process(delta):
 			animation_player.play("idle")
 		elif !holding:
 			animation_player.play("run")
-	elif not is_on_floor():
-		if not jump_action and velocity.y < -MIN_IMPULSE:
+	elif not grounded:
+		if not jump and velocity.y < -MIN_IMPULSE:
 			velocity.y = -MIN_IMPULSE
 		# Plays the fall animation when in the air and descending
 		if velocity.y > 0:
@@ -229,4 +260,6 @@ func _process(delta):
 	# Move the character
 	if !unblockable and !holding:
 		move_and_slide()
+	
+	update_reward()
 

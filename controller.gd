@@ -4,6 +4,12 @@ extends AIController2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	n_steps += 1
+	if n_steps >= reset_after:
+		done = true
+		needs_reset = true
+	
+	if needs_reset:
+		_player.die()
 
 func get_obs():
 	var goal = _player.get_nearest_checkpoint()
@@ -42,6 +48,4 @@ func get_action_space() -> Dictionary:
 
 
 func get_reward():
-	var current_reward = reward
-	reward = 0  # reset the reward to zero checked every decision step
-	return current_reward
+	return reward

@@ -261,6 +261,7 @@ volume_db = -10.0
 
 [node name="AIController2D" type="Node2D" parent="." groups=["AGENT"]]
 script = ExtResource("6_t5qau")
+reset_after = 5000
 
 [connection signal="area_entered" from="Sprite2D/Sword" to="." method="_on_sword_area_entered"]
 [connection signal="body_entered" from="Sprite2D/Sword" to="." method="_on_sword_body_entered"]
