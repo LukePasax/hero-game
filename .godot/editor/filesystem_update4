@@ -15,3 +15,5 @@ res://src/enemies/walking_enemy.gd
 res://src/enemies/walking_enemy.tscn
 res://src/elements/bugged/bugged_fire.tscn
 res://src/enemies/fire.tscn
+res://src/elements/bugged/bugged_coin.tscn
+res://src/elements/bugged/bugged_coin.gd
