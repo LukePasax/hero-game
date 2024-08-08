@@ -227,10 +227,10 @@ position = Vector2(17, 26)
 target_position = Vector2(0, 4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "walk"
 libraries = {
 "": SubResource("AnimationLibrary_vba47")
 }
+autoplay = "walk"
 
 [node name="HitCast" type="RayCast2D" parent="."]
 position = Vector2(-38, 0)
