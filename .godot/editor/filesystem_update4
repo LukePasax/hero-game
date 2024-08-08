@@ -13,3 +13,5 @@ res://train.tscn
 res://src/elements/bugged/bugged_enemy.tscn
 res://src/enemies/walking_enemy.gd
 res://src/enemies/walking_enemy.tscn
+res://src/elements/bugged/bugged_fire.tscn
+res://src/enemies/fire.tscn

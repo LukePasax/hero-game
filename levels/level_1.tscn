@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ips5hn30urth"]
+[gd_scene load_steps=41 format=3 uid="uid://ips5hn30urth"]
 
 [ext_resource type="PackedScene" uid="uid://cgvjoexp074r" path="res://main.tscn" id="1_qmhm4"]
 [ext_resource type="PackedScene" uid="uid://12lmwy38utnt" path="res://src/enemies/hitbox.tscn" id="2_6eleh"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://chjshgw3p1k8q" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/scroll_1.png" id="27_evncv"]
 [ext_resource type="Texture2D" uid="uid://cbgtux4oedris" path="res://resources/Levels/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/potions_1.png" id="28_ovhlw"]
 [ext_resource type="PackedScene" uid="uid://d2t5wwt2347ad" path="res://src/cutscenes/animated_sprites/candelabrum_small.tscn" id="30_y3ptm"]
+[ext_resource type="PackedScene" uid="uid://kywr2gd1bimp" path="res://src/elements/bugged/bugged_fire.tscn" id="31_002bi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3vwf"]
 size = Vector2(6978, 422)
@@ -1274,3 +1275,6 @@ texture = ExtResource("12_swsk4")
 
 [node name="CandelabrumSmall" parent="." index="54" instance=ExtResource("30_y3ptm")]
 position = Vector2(3452, 783)
+
+[node name="Bugged Fire" parent="." index="57" instance=ExtResource("31_002bi")]
+position = Vector2(649, 866)
