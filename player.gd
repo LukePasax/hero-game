@@ -176,7 +176,7 @@ func reset_time_to_goal():
 func update_reward():
 	ai_controller.reward -= 0.01 # Time Penality
 	ai_controller.reward += shaping_reward()
-	print(ai_controller.reward)
+	# print(ai_controller.reward)
 
 func shaping_reward():
 	var s_reward = 0.0
@@ -195,8 +195,8 @@ func shaping_reward():
 		s_reward += best_goal_distance - goal_distance
 		best_goal_distance = goal_distance
 	
-	s_reward += approach_speed * 0.1
-	s_reward -= time_to_goal * 0.01
+	# s_reward += approach_speed * 0.1
+	# s_reward -= time_to_goal * 0.01
 	
 	s_reward /= 1.0
 	return s_reward
