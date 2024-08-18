@@ -13,7 +13,8 @@ func _on_player_died():
 	player.death_animation()
 
 func _on_hit_checkpoint(checkpoint_position):
-	player_spawn = checkpoint_position
+	# player_spawn = checkpoint_position
+	pass
 
 func _on_trigger_boss():
 	ambient_music.stop()

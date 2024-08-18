@@ -29,6 +29,7 @@ func get_obs():
 	)
 	obs.append_array([goal_distance / 20.0, goal_vector.x, goal_vector.y])
 	obs.append(_player.grounded)
+	obs.append(_player.raycast_sensor)
 
 	return {
 		"obs": obs,
