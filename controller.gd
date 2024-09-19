@@ -29,15 +29,22 @@ func get_obs():
 	)
 	obs.append_array([goal_distance / 20.0, goal_vector.x, goal_vector.y])
 	obs.append(_player.grounded)
-	obs.append(_player.raycast_sensor)
+	# obs.append(_player.raycast_sensor.get_observation())
 
 	return {
 		"obs": obs,
 	}
 
+func get_action():
+	return [_player.move_vector, _player.jump_action]
+
 func set_action(action):
-	_player.move_action = action["move"][0]
-	_player.jump_action = action["jump"][0] > 0
+	if action:
+		_player.move_action = action["move"][0]
+		_player.jump_action = action["jump"][0] > 0
+	else:
+		_player.move_action = Vector2(Input.get_axis("move_left", "move_right"), 0)
+		_player.jump_action = Input.is_action_pressed("jump")
 
 func get_action_space() -> Dictionary:
 	var action_space = {

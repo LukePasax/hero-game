@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cfw8ov2cfsejt"]
+[gd_scene load_steps=20 format=3 uid="uid://cfw8ov2cfsejt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k6i68"]
 [ext_resource type="Texture2D" uid="uid://cppfa8m2dfeyx" path="res://Hero Knight/Sprites/HeroKnight/HeroKnightNoWeapons.png" id="3_xrbb4"]
@@ -215,6 +215,11 @@ _data = {
 "run": SubResource("Animation_mvcmb")
 }
 
+[sub_resource type="InputEventKey" id="InputEventKey_spaxb"]
+device = -1
+keycode = 76
+unicode = 108
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 10
 collision_layer = 2
@@ -263,11 +268,14 @@ volume_db = -10.0
 [node name="AIController2D" type="Node2D" parent="." groups=["AGENT"]]
 script = ExtResource("6_t5qau")
 reset_after = 5000
+expert_demo_save_path = "demo.json"
+remove_last_episode_key = SubResource("InputEventKey_spaxb")
+action_repeat = 10
 
 [node name="RaycastSensor2D" type="Node2D" parent="."]
 script = ExtResource("7_71ksv")
 collision_mask = 2
-cone_width = 70.0
+cone_width = 50.0
 
 [connection signal="area_entered" from="Sprite2D/Sword" to="." method="_on_sword_area_entered"]
 [connection signal="body_entered" from="Sprite2D/Sword" to="." method="_on_sword_body_entered"]

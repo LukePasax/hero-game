@@ -9,4 +9,3 @@
 
 [node name="Sync" type="Node" parent="."]
 script = ExtResource("2_jntyj")
-speed_up = 6.0

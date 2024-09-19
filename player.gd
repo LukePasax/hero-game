@@ -8,9 +8,9 @@ const ACCELERATION = 50
 # The max speed at which the character moves
 const SPEED = 200
 # The speed at which the character falls
-const GRAVITY = 200
+const GRAVITY = 250
 # The maximum velocity with which the character jumps
-const JUMP_IMPULSE = 200
+const JUMP_IMPULSE = 170
 # The minimum velocity with which the character jumps
 const MIN_IMPULSE = 100
 
@@ -29,8 +29,8 @@ var grounded = false
 var move_action = 0
 var jump_action = false
 var best_goal_distance = 10000.0
+var previous_goal_distance = 10000.0
 var current_goal = null
-var previous_goal_distance = 0.0
 var time_to_goal = 0.0
 
 @onready var sprite = $Sprite2D
@@ -40,7 +40,7 @@ var time_to_goal = 0.0
 @onready var hit_sound = $HitSound
 @onready var jump_sound = $JumpSound
 @onready var ai_controller = $AIController2D
-@onready var raycast_sensor: RayCastSensor3D = $RayCastSensor3D
+@onready var raycast_sensor = $RayCastSensor2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -177,7 +177,6 @@ func reset_time_to_goal():
 func update_reward():
 	ai_controller.reward -= 0.01 # Time Penality
 	ai_controller.reward += shaping_reward()
-	# print(ai_controller.reward)
 
 func shaping_reward():
 	var s_reward = 0.0
@@ -189,18 +188,18 @@ func shaping_reward():
 		best_goal_distance = 10000.0
 		reset_time_to_goal()
 	
+	# Calculates the current distance from the goal
 	var goal_distance = global_position.distance_to(to_local(current_goal.global_position))
 	var approach_speed = calculate_approach_speed(goal_distance)
 	
+	# Rewards if the goal is nearer than before
 	if goal_distance < best_goal_distance:
-		s_reward += best_goal_distance - goal_distance
+		s_reward += (best_goal_distance - goal_distance) * 0.1
 		best_goal_distance = goal_distance
 	
-	# s_reward += approach_speed * 0.1
-	# s_reward -= time_to_goal * 0.01
+	s_reward += approach_speed * 0.5
 	
-	s_reward /= 1.0
-	return s_reward
+	return s_reward 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
