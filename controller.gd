@@ -41,7 +41,7 @@ func get_action():
 func set_action(action):
 	if action:
 		_player.move_action = action["move"][0]
-		_player.jump_action = action["jump"][0] > 0
+		_player.jump_action = action["jump"][0]
 	else:
 		_player.move_action = Vector2(Input.get_axis("move_left", "move_right"), 0)
 		_player.jump_action = Input.is_action_pressed("jump")

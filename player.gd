@@ -4,9 +4,9 @@ class_name Player
 
 # CONSTANTS USED BY THE PLAYER
 # The acceleration of the character
-const ACCELERATION = 50
+const ACCELERATION = 70
 # The max speed at which the character moves
-const SPEED = 200
+const SPEED = 220
 # The speed at which the character falls
 const GRAVITY = 250
 # The maximum velocity with which the character jumps
@@ -27,7 +27,7 @@ var grounded = false
 @export var blocking = false
  
 var move_action = 0
-var jump_action = false
+var jump_action = 0
 var best_goal_distance = 10000.0
 var previous_goal_distance = 10000.0
 var current_goal = null
@@ -83,7 +83,6 @@ func die():
 	get_parent().log("died")
 	Events.emit_signal("player_died")
 	ai_controller.reward -= 100.0
-	best_goal_distance = 10000.0
 	ai_controller.reset()
 
 func death_animation():
@@ -155,11 +154,11 @@ func get_move_vector() -> Vector2:
 
 func get_jump_action() -> bool:
 	if ai_controller.done:
-		jump_action = false
-		return jump_action
+		jump_action = 0
+		return false
 
 	if ai_controller.heuristic == "model":
-		return jump_action
+		return jump_action > 0.5
 
 	return Input.is_action_pressed("jump")
 
@@ -175,7 +174,7 @@ func reset_time_to_goal():
 	time_to_goal = 0.0
 
 func update_reward():
-	ai_controller.reward -= 0.01 # Time Penality
+	ai_controller.reward -= 0.05 * time_to_goal # Time Penality
 	ai_controller.reward += shaping_reward()
 
 func shaping_reward():
@@ -184,18 +183,25 @@ func shaping_reward():
 	
 	# Resets the best goal distance if the current goal has been reached
 	if next_goal != current_goal:
+		print("New goal detected:", next_goal, "Previous goal:", current_goal)
 		current_goal = next_goal
 		best_goal_distance = 10000.0
+		print(current_goal)
 		reset_time_to_goal()
 	
 	# Calculates the current distance from the goal
-	var goal_distance = global_position.distance_to(to_local(current_goal.global_position))
+	var goal_distance = global_position.distance_to(current_goal.global_position)
 	var approach_speed = calculate_approach_speed(goal_distance)
 	
 	# Rewards if the goal is nearer than before
 	if goal_distance < best_goal_distance:
 		s_reward += (best_goal_distance - goal_distance) * 0.1
 		best_goal_distance = goal_distance
+		print(best_goal_distance)
+	
+	 # Penality for useless movement
+	if global_position.distance_to(current_goal.global_position) > best_goal_distance + 5:
+		ai_controller.reward -= 0.1
 	
 	s_reward += approach_speed * 0.5
 	
