@@ -1,7 +1,6 @@
-res://train.tscn
-res://player.gd
 res://player.tscn
 res://src/elements/checkpoint.tscn
+res://train.tscn
 res://levels/level_1.tscn
 res://src/enemies/fire.tscn
 res://src/enemies/walking_enemy.tscn
@@ -9,4 +8,4 @@ res://main.tscn
 res://src/elements/bugged/bugged_coin.tscn
 res://src/elements/bugged/bugged_enemy.tscn
 res://src/elements/bugged/bugged_fire.tscn
-res://controller.gd
+res://main.gd

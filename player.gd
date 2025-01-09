@@ -203,6 +203,7 @@ func shaping_reward():
 	if global_position.distance_to(current_goal.global_position) > best_goal_distance + 5:
 		ai_controller.reward -= 0.1
 	
+	# Rewards based on the approach speed
 	s_reward += approach_speed * 0.5
 	
 	return s_reward 
