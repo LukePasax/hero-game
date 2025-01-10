@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://cfw8ov2cfsejt"]
+[gd_scene load_steps=20 format=3 uid="uid://cfw8ov2cfsejt"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k6i68"]
 [ext_resource type="Texture2D" uid="uid://cppfa8m2dfeyx" path="res://Hero Knight/Sprites/HeroKnight/HeroKnightNoWeapons.png" id="3_xrbb4"]
 [ext_resource type="AudioStream" uid="uid://c8x1mhv56wh4s" path="res://resources/Sounds/hitHurt.wav" id="4_i1n07"]
 [ext_resource type="AudioStream" uid="uid://d27xdmoclo30l" path="res://resources/Sounds/jump.wav" id="5_kjb1p"]
 [ext_resource type="Script" path="res://controller.gd" id="6_t5qau"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sensors/sensors_2d/RaycastSensor2D.gd" id="7_w7w6k"]
 [ext_resource type="PackedScene" uid="uid://dsi7tkmhru1lt" path="res://combo_checker.tscn" id="107_st4fu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmdu0"]
@@ -270,6 +271,13 @@ reset_after = 5000
 expert_demo_save_path = "demo.json"
 remove_last_episode_key = SubResource("InputEventKey_spaxb")
 action_repeat = 10
+
+[node name="RaycastSensor2D" type="Node2D" parent="."]
+script = ExtResource("7_w7w6k")
+collision_mask = 3
+collide_with_areas = true
+ray_length = 130
+cone_width = 60.0
 
 [connection signal="area_entered" from="Sprite2D/Sword" to="." method="_on_sword_area_entered"]
 [connection signal="body_entered" from="Sprite2D/Sword" to="." method="_on_sword_body_entered"]

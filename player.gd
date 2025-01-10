@@ -40,7 +40,7 @@ var time_to_goal = 0.0
 @onready var hit_sound = $HitSound
 @onready var jump_sound = $JumpSound
 @onready var ai_controller = $AIController2D
-@onready var raycast_sensor = $RayCastSensor2D
+@onready var raycast_sensor = $RaycastSensor2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
