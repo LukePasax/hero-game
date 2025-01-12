@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
-# CONSTANTS USED BY THE PLAYER
+# CONSTANTS USED BY THE PHYSICS
 # The acceleration of the character
 const ACCELERATION = 70
 # The max speed at which the character moves
@@ -14,7 +14,11 @@ const JUMP_IMPULSE = 170
 # The minimum velocity with which the character jumps
 const MIN_IMPULSE = 100
 
+# CONSTANTS USED BY THE AGENT
+# The threshold that determins when the character should jump
+const JUMP_THRESHOLD = 0.5
 
+# VARIABLES FOR MOVEMENT MECHANICS
 # Used when performing unblockable animations
 var unblockable = false
 # Used when the player is holded in place
@@ -26,14 +30,23 @@ var grounded = false
 # Says if the character is blocking
 @export var blocking = false
  
+# VARIABLES USED BY THE AGENT
+# The action the agent uses to move
 var move_action = 0
+# The action the agent uses to jump
 var jump_action = 0
+# The current shortest distance to the goal reached by the agent
 var best_goal_distance = 10000.0
+# The distance to the goal reached on the previous frame
 var previous_goal_distance = 10000.0
+# The current goal of the agent
 var current_goal = null
+# The time the agent is taking to the goal
 var time_to_goal = 0.0
+# The x position of the agent on the prevoius frame
 var previous_pos_x = 0
 
+# ELEMENTS OF THE PLAYER CHARACTER
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 @onready var sword_box = $Sprite2D/Sword/Hitbox
@@ -160,7 +173,7 @@ func get_jump_action() -> bool:
 		return false
 
 	if ai_controller.heuristic == "model":
-		return jump_action > 0.5
+		return jump_action > JUMP_THRESHOLD
 
 	return Input.is_action_pressed("jump")
 
@@ -187,8 +200,7 @@ func shaping_reward():
 	if next_goal != current_goal:
 		print("New goal detected:", next_goal, "Previous goal:", current_goal)
 		current_goal = next_goal
-		best_goal_distance = 10000.0
-		print(current_goal)
+		best_goal_distance = global_position.distance_to(current_goal.global_position)
 		reset_time_to_goal()
 	
 	# Calculates the current distance from the goal
@@ -206,10 +218,6 @@ func shaping_reward():
 	else:
 		s_reward -= previous_pos_x - global_position.x
 	previous_pos_x = global_position.x
-	
-	 # Penality for useless movement
-	if global_position.distance_to(current_goal.global_position) > best_goal_distance + 5:
-		ai_controller.reward -= 0.1
 	
 	# Rewards based on the approach speed
 	s_reward += approach_speed * 0.5
