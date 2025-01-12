@@ -1,5 +1,5 @@
 res://train.tscn
-res://controller.gd
+res://player.gd
 res://player.tscn
 res://src/elements/checkpoint.tscn
 res://levels/level_1.tscn

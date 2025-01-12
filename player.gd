@@ -32,6 +32,7 @@ var best_goal_distance = 10000.0
 var previous_goal_distance = 10000.0
 var current_goal = null
 var time_to_goal = 0.0
+var previous_pos_x = 0
 
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
@@ -48,6 +49,7 @@ func _ready():
 	vibrate()
 	sword_box.set_deferred("disabled", true)
 	load_texture()
+	previous_pos_x = global_position.x
 
 # A function that loads the correct texture based on the weapons the player has
 func load_texture():
@@ -197,7 +199,13 @@ func shaping_reward():
 	if goal_distance < best_goal_distance:
 		s_reward += (best_goal_distance - goal_distance) * 0.1
 		best_goal_distance = goal_distance
-		print(best_goal_distance)
+	
+	# Rewards if the player is moving to the right, penalizes if moving to the left
+	if global_position.x > previous_pos_x:
+		s_reward += global_position.x - previous_pos_x
+	else:
+		s_reward -= previous_pos_x - global_position.x
+	previous_pos_x = global_position.x
 	
 	 # Penality for useless movement
 	if global_position.distance_to(current_goal.global_position) > best_goal_distance + 5:
