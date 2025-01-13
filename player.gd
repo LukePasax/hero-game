@@ -17,6 +17,15 @@ const MIN_IMPULSE = 100
 # CONSTANTS USED BY THE AGENT
 # The threshold that determins when the character should jump
 const JUMP_THRESHOLD = 0.5
+const FACTOR = 0.001
+const DEATH_PENALITY = 100
+
+
+# REWARD STANDARDIZATION
+var reward_mean = 0.0
+var reward_std_dev = 1.0
+var reward_window = []
+var max_window_size = 100
 
 # VARIABLES FOR MOVEMENT MECHANICS
 # Used when performing unblockable animations
@@ -36,9 +45,9 @@ var move_action = 0
 # The action the agent uses to jump
 var jump_action = 0
 # The current shortest distance to the goal reached by the agent
-var best_goal_distance = 10000.0
+var best_goal_distance
 # The distance to the goal reached on the previous frame
-var previous_goal_distance = 10000.0
+var previous_goal_distance
 # The current goal of the agent
 var current_goal = null
 # The time the agent is taking to the goal
@@ -62,7 +71,10 @@ func _ready():
 	vibrate()
 	sword_box.set_deferred("disabled", true)
 	load_texture()
+	current_goal = get_nearest_checkpoint()
 	previous_pos_x = global_position.x
+	previous_goal_distance = global_position.distance_to(current_goal.global_position)
+	best_goal_distance = global_position.distance_to(current_goal.global_position)
 
 # A function that loads the correct texture based on the weapons the player has
 func load_texture():
@@ -97,7 +109,8 @@ func die():
 	hit_sound.play()
 	get_parent().log("died")
 	Events.emit_signal("player_died")
-	ai_controller.reward -= 100.0
+	reward_window.clear()
+	ai_controller.reward -= DEATH_PENALITY
 	ai_controller.reset()
 
 func death_animation():
@@ -177,19 +190,29 @@ func get_jump_action() -> bool:
 
 	return Input.is_action_pressed("jump")
 
-func calculate_approach_speed(current_distance: float) -> float:
-	var approach_speed = previous_goal_distance - current_distance
-	previous_goal_distance = current_distance
-	return approach_speed
-
 func update_time_to_goal(delta: float):
 	time_to_goal += delta
 
 func reset_time_to_goal():
 	time_to_goal = 0.0
 
+func standardize_reward(s_reward):
+	reward_window.append(s_reward)
+	if reward_window.size() > max_window_size:
+		reward_window.pop_front()
+	
+	var reward_sum = 0.0
+	var variance_sum = 0.0
+	for r in reward_window:
+		reward_sum += r
+		variance_sum += pow(r - reward_mean, 2)
+	reward_mean = reward_sum / reward_window.size()
+	reward_std_dev = sqrt(variance_sum / reward_window.size())
+	
+	return (s_reward - reward_mean) / max(reward_std_dev, 1e-5)
+
 func update_reward():
-	ai_controller.reward -= 0.05 * time_to_goal # Time Penality
+	# ai_controller.reward -= 0.05 * time_to_goal # Time Penality
 	ai_controller.reward += shaping_reward()
 
 func shaping_reward():
@@ -201,28 +224,17 @@ func shaping_reward():
 		print("New goal detected:", next_goal, "Previous goal:", current_goal)
 		current_goal = next_goal
 		best_goal_distance = global_position.distance_to(current_goal.global_position)
+		previous_goal_distance = global_position.distance_to(current_goal.global_position)
 		reset_time_to_goal()
 	
 	# Calculates the current distance from the goal
 	var goal_distance = global_position.distance_to(current_goal.global_position)
-	var approach_speed = calculate_approach_speed(goal_distance)
 	
-	# Rewards if the goal is nearer than before
-	if goal_distance < best_goal_distance:
-		s_reward += (best_goal_distance - goal_distance) * 0.1
-		best_goal_distance = goal_distance
+	# Rewards based on the distance to the goal
+	s_reward += (previous_goal_distance - goal_distance)
+	previous_goal_distance = goal_distance
 	
-	# Rewards if the player is moving to the right, penalizes if moving to the left
-	if global_position.x > previous_pos_x:
-		s_reward += global_position.x - previous_pos_x
-	else:
-		s_reward -= previous_pos_x - global_position.x
-	previous_pos_x = global_position.x
-	
-	# Rewards based on the approach speed
-	s_reward += approach_speed * 0.5
-	
-	return s_reward 
+	return standardize_reward(s_reward) 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
