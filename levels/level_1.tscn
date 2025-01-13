@@ -1274,3 +1274,6 @@ texture = ExtResource("12_swsk4")
 
 [node name="CandelabrumSmall" parent="." index="54" instance=ExtResource("30_y3ptm")]
 position = Vector2(3452, 783)
+
+[node name="Goal" parent="." index="57"]
+position = Vector2(4293, 796)

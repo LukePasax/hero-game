@@ -6,3 +6,4 @@ res://src/enemies/fire.tscn
 res://src/enemies/walking_enemy.tscn
 res://main.tscn
 res://player.gd
+res://main.gd

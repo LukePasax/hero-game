@@ -49,7 +49,7 @@ var best_goal_distance
 # The distance to the goal reached on the previous frame
 var previous_goal_distance
 # The current goal of the agent
-var current_goal = null
+var current_goal
 # The time the agent is taking to the goal
 var time_to_goal = 0.0
 # The x position of the agent on the prevoius frame
@@ -71,7 +71,7 @@ func _ready():
 	vibrate()
 	sword_box.set_deferred("disabled", true)
 	load_texture()
-	current_goal = get_nearest_checkpoint()
+	current_goal = get_parent().get_goal()
 	previous_pos_x = global_position.x
 	previous_goal_distance = global_position.distance_to(current_goal.global_position)
 	best_goal_distance = global_position.distance_to(current_goal.global_position)
@@ -217,15 +217,17 @@ func update_reward():
 
 func shaping_reward():
 	var s_reward = 0.0
-	var next_goal = get_nearest_checkpoint()
+	# var next_goal = get_nearest_checkpoint()
 	
+	"""
 	# Resets the best goal distance if the current goal has been reached
 	if next_goal != current_goal:
 		print("New goal detected:", next_goal, "Previous goal:", current_goal)
-		current_goal = next_goal
+		#current_goal = next_goal
 		best_goal_distance = global_position.distance_to(current_goal.global_position)
 		previous_goal_distance = global_position.distance_to(current_goal.global_position)
 		reset_time_to_goal()
+	"""
 	
 	# Calculates the current distance from the goal
 	var goal_distance = global_position.distance_to(current_goal.global_position)

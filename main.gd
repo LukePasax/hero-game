@@ -42,6 +42,9 @@ func log(action):
 	if recording:
 		$Logger.log($WebSocketClient.get_recording_time(), action)
 
+func get_goal():
+	return get_node("Goal")
+
 # A function that return the list of checkpoints yet to be reached
 func get_active_checkpoint_list():
 	var checkpoints = []

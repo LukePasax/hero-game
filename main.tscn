@@ -99,3 +99,5 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_vqhvh")
 }
+
+[node name="Goal" type="Node2D" parent="."]
