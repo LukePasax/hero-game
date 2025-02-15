@@ -13,6 +13,7 @@ func _on_player_died():
 	player.death_animation()
 
 func _on_hit_checkpoint(checkpoint_position):
+	player.reward_checkpoint()
 	# player_spawn = checkpoint_position
 	pass
 

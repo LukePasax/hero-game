@@ -276,8 +276,9 @@ action_repeat = 10
 script = ExtResource("7_w7w6k")
 collision_mask = 3
 collide_with_areas = true
-ray_length = 130
-cone_width = 60.0
+n_rays = 32.0
+ray_length = 320
+cone_width = 75.0
 
 [connection signal="area_entered" from="Sprite2D/Sword" to="." method="_on_sword_area_entered"]
 [connection signal="body_entered" from="Sprite2D/Sword" to="." method="_on_sword_body_entered"]

@@ -12,22 +12,14 @@ func _physics_process(delta):
 		_player.die()
 
 func get_obs():
-	var goal = _player.get_nearest_checkpoint()
+	var obs: Array = []
+	var goal = _player.current_goal
 	
-	var goal_distance = _player.position.distance_to(goal.position)
-	var goal_position = goal.global_position
-	
-	var goal_vector = _player.to_local(goal_position).normalized()
-	
-	goal_distance = clamp(goal_distance, 0.0, 20.0)
-	var obs = []
-	obs.append_array(
-		[
-			_player.move_vector.x / _player.SPEED,
-			_player.move_vector.y
-		]
-	)
-	obs.append_array([goal_distance / 20.0, goal_vector.x, goal_vector.y])
+	# Get the goal distance realtive to the player
+	var goal_relative_distance: Vector2 = _player.to_local(goal.global_position)
+	var normalized_goal_relative_distance = goal_relative_distance.limit_length(100) / 100
+	obs.append(normalized_goal_relative_distance.x)
+	obs.append(normalized_goal_relative_distance.y)
 	obs.append(_player.grounded)
 	obs.append_array(_player.raycast_sensor.get_observation())
 

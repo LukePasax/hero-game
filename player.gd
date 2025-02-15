@@ -18,7 +18,9 @@ const MIN_IMPULSE = 100
 # The threshold that determins when the character should jump
 const JUMP_THRESHOLD = 0.5
 const FACTOR = 0.001
-const DEATH_PENALITY = 100
+const DEATH_PENALITY = 50
+const GOAL_REWARD = 100
+const CHECKPOINT_REWARD = 20
 
 
 # REWARD STANDARDIZATION
@@ -65,7 +67,7 @@ var previous_pos_x = 0
 @onready var ai_controller = $AIController2D
 @onready var raycast_sensor = $RaycastSensor2D
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	ai_controller.init(self)
 	vibrate()
@@ -109,7 +111,6 @@ func die():
 	hit_sound.play()
 	get_parent().log("died")
 	Events.emit_signal("player_died")
-	reward_window.clear()
 	ai_controller.reward -= DEATH_PENALITY
 	ai_controller.reset()
 
@@ -196,50 +197,30 @@ func update_time_to_goal(delta: float):
 func reset_time_to_goal():
 	time_to_goal = 0.0
 
-func standardize_reward(s_reward):
-	reward_window.append(s_reward)
-	if reward_window.size() > max_window_size:
-		reward_window.pop_front()
-	
-	var reward_sum = 0.0
-	var variance_sum = 0.0
-	for r in reward_window:
-		reward_sum += r
-		variance_sum += pow(r - reward_mean, 2)
-	reward_mean = reward_sum / reward_window.size()
-	reward_std_dev = sqrt(variance_sum / reward_window.size())
-	
-	return (s_reward - reward_mean) / max(reward_std_dev, 1e-5)
+func reward_checkpoint():
+	ai_controller.reward += CHECKPOINT_REWARD
 
 func update_reward():
-	# ai_controller.reward -= 0.05 * time_to_goal # Time Penality
 	ai_controller.reward += shaping_reward()
 
 func shaping_reward():
 	var s_reward = 0.0
-	# var next_goal = get_nearest_checkpoint()
 	
-	"""
-	# Resets the best goal distance if the current goal has been reached
-	if next_goal != current_goal:
-		print("New goal detected:", next_goal, "Previous goal:", current_goal)
-		#current_goal = next_goal
-		best_goal_distance = global_position.distance_to(current_goal.global_position)
-		previous_goal_distance = global_position.distance_to(current_goal.global_position)
-		reset_time_to_goal()
-	"""
-	
-	# Calculates the current distance from the goal
 	var goal_distance = global_position.distance_to(current_goal.global_position)
+	s_reward += (previous_goal_distance - goal_distance) * 10
 	
-	# Rewards based on the distance to the goal
-	s_reward += (previous_goal_distance - goal_distance)
+	s_reward -= 1
+	if goal_distance < 10:
+		s_reward += 100
+	
+	
 	previous_goal_distance = goal_distance
 	
-	return standardize_reward(s_reward) 
+	return s_reward
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	update_time_to_goal(delta)
 	move_vector = get_move_vector()
 	
