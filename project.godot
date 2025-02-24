@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Hero Game"
-run/main_scene="res://src/cutscenes/knight_room.tscn"
+run/main_scene="res://train.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

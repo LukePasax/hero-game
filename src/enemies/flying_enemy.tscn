@@ -260,10 +260,10 @@ position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_sf6da")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "FollowPath"
 libraries = {
 "": SubResource("AnimationLibrary_xur3y")
 }
+autoplay = "FollowPath"
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 3.0

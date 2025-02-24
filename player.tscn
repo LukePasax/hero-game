@@ -267,7 +267,7 @@ volume_db = -10.0
 
 [node name="AIController2D" type="Node2D" parent="." groups=["AGENT"]]
 script = ExtResource("6_t5qau")
-reset_after = 5000
+reset_after = 20000
 expert_demo_save_path = "demo.json"
 remove_last_episode_key = SubResource("InputEventKey_spaxb")
 action_repeat = 10
@@ -276,9 +276,8 @@ action_repeat = 10
 script = ExtResource("7_w7w6k")
 collision_mask = 3
 collide_with_areas = true
-n_rays = 32.0
+n_rays = 128.0
 ray_length = 320
-cone_width = 75.0
 
 [connection signal="area_entered" from="Sprite2D/Sword" to="." method="_on_sword_area_entered"]
 [connection signal="body_entered" from="Sprite2D/Sword" to="." method="_on_sword_body_entered"]

@@ -16,18 +16,14 @@ const MIN_IMPULSE = 100
 
 # CONSTANTS USED BY THE AGENT
 # The threshold that determins when the character should jump
-const JUMP_THRESHOLD = 0.5
-const FACTOR = 0.001
-const DEATH_PENALITY = 50
-const GOAL_REWARD = 100
-const CHECKPOINT_REWARD = 20
+const JUMP_THRESHOLD = 0
 
 
-# REWARD STANDARDIZATION
-var reward_mean = 0.0
-var reward_std_dev = 1.0
-var reward_window = []
-var max_window_size = 100
+@export var FACTOR: float = 0.1
+@export var DEATH_PENALITY: int = 50
+@export var GOAL_REWARD: int = 50
+@export var CHECKPOINT_REWARD: int = 10
+var LOAD = false
 
 # VARIABLES FOR MOVEMENT MECHANICS
 # Used when performing unblockable animations
@@ -45,9 +41,9 @@ var grounded = false
 # The action the agent uses to move
 var move_action = 0
 # The action the agent uses to jump
-var jump_action = 0
-# The current shortest distance to the goal reached by the agent
-var best_goal_distance
+var jump_action = false
+# The max distance of the goal
+var max_goal_distance
 # The distance to the goal reached on the previous frame
 var previous_goal_distance
 # The current goal of the agent
@@ -56,6 +52,7 @@ var current_goal
 var time_to_goal = 0.0
 # The x position of the agent on the prevoius frame
 var previous_pos_x = 0
+var jump_time = 0.0
 
 # ELEMENTS OF THE PLAYER CHARACTER
 @onready var sprite = $Sprite2D
@@ -70,13 +67,16 @@ var previous_pos_x = 0
 
 func _ready():
 	ai_controller.init(self)
+	raycast_sensor.activate()
 	vibrate()
 	sword_box.set_deferred("disabled", true)
 	load_texture()
+	if LOAD:
+		load_hyperparams()
 	current_goal = get_parent().get_goal()
 	previous_pos_x = global_position.x
 	previous_goal_distance = global_position.distance_to(current_goal.global_position)
-	best_goal_distance = global_position.distance_to(current_goal.global_position)
+	max_goal_distance = previous_goal_distance
 
 # A function that loads the correct texture based on the weapons the player has
 func load_texture():
@@ -88,6 +88,18 @@ func load_texture():
 		sprite.texture = load("res://Hero Knight/Sprites/HeroKnight/HeroKnightShield.png")
 	else:
 		sprite.texture = load("res://Hero Knight/Sprites/HeroKnight/HeroKnightNoWeapons.png")
+
+func load_hyperparams():
+	var file = FileAccess.open("user://hyperparameters.json", FileAccess.READ)
+	if file:
+		var content = JSON.parse_string(file.get_as_text())
+		if content:
+			FACTOR = content["FACTOR"]
+			DEATH_PENALITY = content["DEATH_PENALITY"]
+			GOAL_REWARD = content["GOAL_REWARD"]
+			CHECKPOINT_REWARD = content["CHECKPOINT_REWARD"]
+			print(content)
+
 
 # Called when the player picks up the sword
 func pick_up_sword():
@@ -177,17 +189,17 @@ func get_move_vector() -> Vector2:
 		return Vector2.ZERO
 
 	if ai_controller.heuristic == "model":
-		return Vector2(clamp(move_action, -1.0, 0.5),0)
+		return Vector2(clamp(move_action, -1.1, 1.1),0)
 	
 	return Vector2(Input.get_axis("move_left", "move_right"), 0)
 
 func get_jump_action() -> bool:
 	if ai_controller.done:
-		jump_action = 0
+		jump_action = false
 		return false
 
 	if ai_controller.heuristic == "model":
-		return jump_action > JUMP_THRESHOLD
+		return jump_action
 
 	return Input.is_action_pressed("jump")
 
@@ -207,20 +219,18 @@ func shaping_reward():
 	var s_reward = 0.0
 	
 	var goal_distance = global_position.distance_to(current_goal.global_position)
-	s_reward += (previous_goal_distance - goal_distance) * 10
+	var progress =  (previous_goal_distance - goal_distance)
+	s_reward += progress * FACTOR
 	
-	s_reward -= 1
 	if goal_distance < 10:
-		s_reward += 100
+		s_reward += GOAL_REWARD
 	
 	
 	previous_goal_distance = goal_distance
-	
 	return s_reward
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	
+func _physics_process(delta):
 	update_time_to_goal(delta)
 	move_vector = get_move_vector()
 	
@@ -238,6 +248,11 @@ func _process(delta):
 	
 	grounded = is_on_floor()
 	var jump = get_jump_action()
+	
+	if jump:
+		jump_time += delta
+	else:
+		jump_time = 0.0
 	
 	# Checks if the character is on the floor
 	if grounded and !unblockable:
