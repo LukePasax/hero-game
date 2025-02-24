@@ -180,6 +180,7 @@ _data = {
 script = ExtResource("1_jcbqv")
 
 [node name="Hitbox" parent="." instance=ExtResource("2_m2ccd")]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-0.5, -25)

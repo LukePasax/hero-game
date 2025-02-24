@@ -5,3 +5,7 @@ res://player.tscn
 res://levels/level_1.tscn
 res://src/enemies/walking_enemy.tscn
 res://src/enemies/fire.tscn
+res://player.gd
+res://controller.gd
+res://src/elements/checkpoint.tscn
+res://src/elements/checkpoint.gd

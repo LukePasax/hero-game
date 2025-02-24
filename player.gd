@@ -6,7 +6,7 @@ class_name Player
 # The acceleration of the character
 const ACCELERATION = 70
 # The max speed at which the character moves
-const SPEED = 220
+const SPEED = 250
 # The speed at which the character falls
 const GRAVITY = 250
 # The maximum velocity with which the character jumps
@@ -32,8 +32,6 @@ var unblockable = false
 var holding = false
 # The move vector of the character
 var move_vector = Vector2.ZERO
-# True if the character is on the ground
-var grounded = false
 # Says if the character is blocking
 @export var blocking = false
  
@@ -144,7 +142,7 @@ func apply_friction():
 	velocity.x = move_toward(velocity.x, 0, ACCELERATION)
 
 func apply_acceleration(x):
-	velocity.x = move_toward(velocity.x, 200 * x, ACCELERATION)
+	velocity.x = move_toward(velocity.x, SPEED * x, ACCELERATION)
 
 # A function that holds the player in place
 func hold():
@@ -173,14 +171,9 @@ func _on_sword_area_entered(area):
 
 func get_nearest_checkpoint():
 	var checkpoints = get_parent().get_active_checkpoint_list()
-	var nearest = null
-	var min_dist = INF
 	
-	for checkpoint in checkpoints:
-		var distance = global_position.distance_to(to_local(checkpoint.global_position))
-		if distance < min_dist:
-			min_dist = distance
-			nearest = checkpoint
+	if checkpoints.is_empty():
+		return null
 	
 	return checkpoints[0]
 
@@ -189,7 +182,7 @@ func get_move_vector() -> Vector2:
 		return Vector2.ZERO
 
 	if ai_controller.heuristic == "model":
-		return Vector2(clamp(move_action, -1.1, 1.1),0)
+		return Vector2(clamp(move_action, -0.5, 1.0),0)
 	
 	return Vector2(Input.get_axis("move_left", "move_right"), 0)
 
@@ -233,9 +226,10 @@ func shaping_reward():
 func _physics_process(delta):
 	update_time_to_goal(delta)
 	move_vector = get_move_vector()
+	var jump = get_jump_action()
 	
 	# If the player is moving apply acceleration, otherwise friction
-	if move_vector.x == 0:
+	if move_vector.x == 0 and is_on_floor():
 		apply_friction()
 	else:
 		if move_vector.x > 0:
@@ -246,16 +240,13 @@ func _physics_process(delta):
 	
 	apply_gravity(delta)
 	
-	grounded = is_on_floor()
-	var jump = get_jump_action()
-	
 	if jump:
 		jump_time += delta
 	else:
 		jump_time = 0.0
 	
 	# Checks if the character is on the floor
-	if grounded and !unblockable:
+	if is_on_floor() and !unblockable:
 		# If the player jumps, play the animation and change the y velocity
 		if jump and !holding:
 			jump_sound.play()
@@ -278,7 +269,7 @@ func _physics_process(delta):
 			animation_player.play("idle")
 		elif !holding:
 			animation_player.play("run")
-	elif not grounded:
+	elif not is_on_floor():
 		if not jump and velocity.y < -MIN_IMPULSE:
 			velocity.y = -MIN_IMPULSE
 		# Plays the fall animation when in the air and descending

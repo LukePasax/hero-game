@@ -6,6 +6,7 @@
 size = Vector2(78, 100.5)
 
 [node name="Checkpoint" type="Area2D"]
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_lltua")
 
