@@ -1,4 +1,7 @@
+res://src/elements/moving_platform.tscn
+res://src/elements/moving_platform.gd
 res://train.tscn
 res://player.tscn
 res://levels/level_1.tscn
 res://src/enemies/walking_enemy.tscn
+res://src/enemies/fire.tscn

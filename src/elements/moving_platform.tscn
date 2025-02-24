@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://rjflql46btnx"]
+[gd_scene load_steps=4 format=3 uid="uid://rjflql46btnx"]
 
+[ext_resource type="Script" path="res://src/elements/moving_platform.gd" id="1_3on77"]
 [ext_resource type="Texture2D" uid="uid://dvxrnpoxiyeiv" path="res://resources/Levels/castle_tilesheet.png" id="1_nju7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnmxh"]
@@ -7,6 +8,7 @@ size = Vector2(64, 13)
 
 [node name="MovingPlatform" type="AnimatableBody2D"]
 collision_mask = 0
+script = ExtResource("1_3on77")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
